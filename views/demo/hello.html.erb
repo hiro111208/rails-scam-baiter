@@ -1,0 +1,15 @@
+<h5>Hi</h5>
+
+<%= link_to("test", "/demo/index") %>
+
+<% @array.each do |n| %>
+  <p> <%= n %></p>
+<% end %>
+
+ID: <%= @id %>
+
+ID: <%= params[:id] %>
+
+Page: <%= @page %>
+
+Next Page: <%= @page.to_i + 1%>
