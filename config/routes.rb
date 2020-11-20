@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'bank_login/index'
+  post 'bank_login/login'
+
   get 'demo/index'
 
   get 'demo/hello'
