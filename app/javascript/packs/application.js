@@ -8,9 +8,13 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 
+global.toastr = require("toastr")
+
 //= require jquery3
 //= require popper
 //= require bootstrap
+
+import "../stylesheets/application"
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
