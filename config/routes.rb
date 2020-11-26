@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
-  get 'bank_login/index'
-  post 'bank_login/login'
+  # TODO: https://github.com/heartcombo/devise/wiki/How-to-Setup-Multiple-Devise-User-Models
 
-  get 'demo/index'
+  root to: 'overview#index'
 
-  get 'demo/hello'
+  devise_scope :user do
+    get 'bank_login/index' => 'devise/sessions#new' # custom path to login/sign_in
+  end
 
-  get 'demo/contact'
+  devise_for :users, path: 'bank_login', skip: [:registrations]
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

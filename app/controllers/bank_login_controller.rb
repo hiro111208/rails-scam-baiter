@@ -1,9 +1,9 @@
 class BankLoginController < ApplicationController
   def index
-    render('index')
+    # render('index')
   end
 
   def login
-    print('Test')
+    # print('Test')
   end
 end
