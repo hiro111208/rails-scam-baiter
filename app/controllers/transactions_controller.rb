@@ -1,6 +1,6 @@
 class TransactionsController < ApplicationController
 
-  def transactions
+  def index
   end
 
   #def show
