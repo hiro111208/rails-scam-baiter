@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'transactions/transactions'
   # TODO: https://github.com/heartcombo/devise/wiki/How-to-Setup-Multiple-Devise-User-Models
 
   root to: 'overview#index'
