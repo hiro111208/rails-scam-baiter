@@ -11,6 +11,7 @@ class PaymentsController < ApplicationController
   def create
     first_name = params[:firstName]
     amount = params[:amount].to_d
+    # TODO: Maybe if it's one of our ibans in the system we can transfer the money?
     iban = params[:iban]
 
     account = user_account
