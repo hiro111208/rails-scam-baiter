@@ -1,0 +1,64 @@
+<%= link_to("<< Back to List", users_path, :class => 'back-link') %>
+
+<div class="table">
+  <div class="tab-content profile-tab" id="myTabContent">
+    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+      <div class="row">
+        <div class="col-md-6 border-bottom">
+          <label>First Name</label>
+        </div>
+        <div class="col-md-6 border-bottom border-left alert-info text-dark">
+          <p><%= @user.firstName %></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 border-bottom">
+          <label>Last Name</label>
+        </div>
+        <div class="col-md-6 border-bottom border-left alert-info text-dark">
+          <p><%= @user.lastName %></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 border-bottom">
+          <label>Position</label>
+        </div>
+        <div class="col-md-6 border-bottom border-left alert-info text-dark">
+          <p><%= @user.position %></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 border-bottom">
+          <label>Email</label>
+        </div>
+        <div class="col-md-6 border-bottom border-left alert-info text-dark">
+          <p><%= @user.email %></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 border-bottom">
+          <label>Password</label>
+        </div>
+        <div class="col-md-6 border-bottom border-left alert-info text-dark">
+          <p><%= @user.password %></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 border-bottom">
+          <label>Created</label>
+        </div>
+        <div class="col-md-6 border-bottom border-left alert-info text-dark">
+          <p><%= @user.created_at %></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 border-bottom">
+          <label>Updated</label>
+        </div>
+        <div class="col-md-6 border-bottom border-left alert-info text-dark">
+          <p><%= @user.updated_at %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

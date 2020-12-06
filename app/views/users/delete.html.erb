@@ -1,0 +1,17 @@
+<%= link_to("<< Back to List", users_path, :class => 'back-link') %>
+
+<div class="card">
+  <h2>Delete Users</h2>
+
+  <%= form_for(@user, :method => 'delete') do |f| %>
+
+    <p>Are you sure you want to delete this user?</p>
+    <h5><%= @user.firstName + " " + @user.lastName %></h5><br>
+
+
+    <div class="form-buttons">
+      <%= f.submit("Delete User") %>
+    </div>
+
+  <% end %>
+</div>
