@@ -14,4 +14,6 @@ class User < ApplicationRecord
   #validates :telephone, presence: true, length:{maximum: 15}
   #validates :address, presence: true
   # has_many :accounts # foreign key, having many bank accounts
+
+  has_many :accounts
 end

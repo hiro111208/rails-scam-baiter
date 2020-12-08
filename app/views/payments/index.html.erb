@@ -1,0 +1,95 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-4 order-md-2 mb-4">
+      <h4 class="d-flex justify-content-between align-items-center mb-3">
+        <span class="text-muted">Your recent transactions</span>
+        <span class="badge badge-secondary badge-pill">5</span>
+      </h4>
+
+      <ul class="list-group mb-3">
+        <% @transactions.each do |transaction| %>
+          <li class="list-group-item d-flex justify-content-between lh-condensed">
+            <div>
+              <h6 class="my-0"><%= transaction.payee %></h6>
+              <small class="text-muted"><%= transaction.date %></small>
+            </div>
+            <span class="text-muted">$<%= transaction.amount %></span>
+          </li>
+        <% end %>
+        <%= link_to "Go to Transactions", "transactions#index", class: 'text-center' %>
+      </ul>
+    </div>
+    <div class="col-md-8 order-md-1">
+      <h2 class="mb-4">Make a payment</h2>
+
+      <h4>Payment details</h4>
+
+
+      <%= form_with(url: "/payments", method: "post") do %>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <%= label_tag(:firstName, "Name") %>
+            <%= text_field_tag(:firstName, "", class: "form-control", required: true) %>
+          </div>
+          <div class="col-md-6 mb-3">
+            <%= label_tag(:email, "Email") %>
+            <span class="text-muted">(Optional)</span>
+            <%= text_field_tag(:email, "", class: "form-control") %>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <%= label_tag(:country, "Country") %>
+
+          <%= select_tag(
+                :country,
+                options_for_select([['United Kingdom', 'UK'], %w[Bulgaria BG], %w[Germany DE]]),
+                class: 'form-control',
+                required: true
+              ) %>
+
+          <div class="invalid-feedback">
+            Please enter a valid country to send the payment.
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <%= label_tag(:iban, "IBAN") %>
+          <%= text_field_tag(:iban, "", class: "form-control", placeholder: "GB000000000000", required: true) %>
+
+          <div class="invalid-feedback">
+            Please enter a valid IBAN address.
+          </div>
+        </div>
+
+
+        <div class="mb-3">
+          <%= label_tag(:amount, "Amount") %>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">BGN</span>
+            </div>
+
+            <%= number_field_tag(:amount, "", class: "form-control", placeholder: "55", required: true, min: 0) %>
+
+            <div class="invalid-feedback" style="width: 100%;">
+              The amount to transfer is required.
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <%= label_tag(:note, "Note") %>
+          <span class="text-muted">(Optional)</span>
+          <%= text_field_tag(:note, "", class: "form-control", placeholder: "Merry Christmas") %>
+
+          <div class="invalid-feedback">
+            Please enter a valid email address.
+          </div>
+        </div>
+
+        <%= submit_tag("Send money", class: 'btn btn-primary') %>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_19_220012) do
+ActiveRecord::Schema.define(version: 2020_12_05_124540) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "accounts", force: :cascade do |t|
+    t.integer "currency"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
+    t.decimal "balance", default: "0.0"
+  end
 
   create_table "pages", force: :cascade do |t|
     t.bigint "subject_id"
@@ -33,6 +41,16 @@ ActiveRecord::Schema.define(version: 2020_11_19_220012) do
     t.boolean "visible"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "transactions", force: :cascade do |t|
+    t.string "payee"
+    t.float "amount"
+    t.datetime "date"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "transaction_type"
+    t.integer "account_id"
   end
 
   create_table "users", force: :cascade do |t|
