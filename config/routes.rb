@@ -9,6 +9,12 @@ Rails.application.routes.draw do
 
   devise_for :users, path: 'bank_login', skip: [:registrations]
 
+  resources :users do
+    member do
+      get :delete
+    end
+  end
+
   get 'payments', to: 'payments#index'
   post 'payments', to: 'payments#create'
 
