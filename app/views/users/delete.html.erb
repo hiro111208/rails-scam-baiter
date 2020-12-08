@@ -5,13 +5,12 @@
 
   <%= form_for(@user, :method => 'delete') do |f| %>
 
-    <p>Are you sure you want to delete this user?</p>
-    <h5><%= @user.firstName + " " + @user.lastName %></h5><br>
+  <p>Are you sure you want to delete this user?</p>
+  <h5><%= @user.firstName + " " + @user.lastName %></h5><br>
 
+  <div class="form-buttons">
+    <%= f.submit("Delete User") %>
+  </div>
 
-    <div class="form-buttons">
-      <%= f.submit("Delete User") %>
-    </div>
-
-  <% end %>
+<% end %>
 </div>

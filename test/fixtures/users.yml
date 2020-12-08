@@ -4,8 +4,6 @@ one:
   firstName: MyString
   lastName: MyString
   email: test@test.com
-  #password: seg2020
-  #password_confirmation: seg2020
 
 two:
   firstName: MyString
