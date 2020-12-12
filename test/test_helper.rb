@@ -10,7 +10,7 @@ class ActiveSupport::TestCase
   fixtures :all
 
   def sign_in_as_user(user, password)
-    post '/bank_login/sign_in', params: { email: user.email, password: password }
+    post '/bank_login/sign_in', params: { user: { email: user.email, password: password } }
   end
   # Add more helper methods to be used by all tests here...
 end

@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'test_helper'
 
 class PaymentsFlowTest < ActionDispatch::IntegrationTest
@@ -20,30 +21,30 @@ class PaymentsFlowTest < ActionDispatch::IntegrationTest
 
   test 'unsuccessful payment due to IBAN' do
     sign_in_as_user(@user, 'seg2020')
-    post '/payments', params: { user: { firstName: 'Test payment',
-                                        amount: '50.50',
-                                        country: 'BG',
-                                        iban: 'GB000000000' } }
+    post '/payments', params: { firstName: 'Test payment',
+                                amount: '50.50',
+                                country: 'BG',
+                                iban: 'GB000000000' }
 
     assert_redirected_to '/payments'
   end
 
   test 'unsuccessful payment due to insufficient balance' do
     sign_in_as_user(@user, 'seg2020')
-    post '/payments', params: { user: { firstName: 'Test payment',
-                                        amount: '50.50',
-                                        country: 'BG',
-                                        iban: 'GB000000000' } }
+    post '/payments', params: { firstName: 'Test payment',
+                                amount: '50.50',
+                                country: 'BG',
+                                iban: 'GB000000000' }
 
     assert_redirected_to '/payments'
   end
 
   test 'successful payment' do
     sign_in_as_user(@user, 'seg2020')
-    post '/payments', params: { user: { firstName: 'Test payment',
-                                        amount: '50.50',
-                                        country: 'GB',
-                                        iban: 'GB000000000' } }
+    post '/payments', params: { firstName: 'Test payment',
+                                amount: '50.50',
+                                country: 'GB',
+                                iban: 'GB000000000' }
 
     assert_redirected_to '/payments'
   end
