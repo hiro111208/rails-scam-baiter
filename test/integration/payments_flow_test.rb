@@ -8,6 +8,8 @@ class PaymentsFlowTest < ActionDispatch::IntegrationTest
                         email: 'user@example.com',
                         password: 'seg2020',
                         password_confirmation: 'seg2020')
+
+    @user.accounts.create(currency: 0)
   end
 
   test 'renders right template' do
