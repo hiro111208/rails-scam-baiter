@@ -14,14 +14,19 @@
                     </h2>
                 </div>
                 <div class="panel-body">
-                    <h3>
-                        BEE, Team (Change later)
-                    </h3>
+                  <h3>
+                        BEE, Team
+                  </h3>
                 </div>
+                <!-- <% @transactions.each do |transaction| %> -->
+                <!-- The below gets the three recent transactions but the code above will be more efficient but isn't working-->
+                <% @transaction = Transaction.first -%>
+                <% @transaction2 = Transaction.second -%>
+                <% @transaction3 = Transaction.third -%>
                     <ul class="list-group">
-
                     <li class="list-group-item">
-                    <h4>Account Number: 143520 | Balance: £999.99</h4>
+                      <% @account = Account.first -%>
+                    <h4>Balance: £<%= @account.balance %></h4>
                     <table class="table table-hover">
                         <thead>
                             <tr>
@@ -33,93 +38,29 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Wed Nov 12 17:43:13 2020</td>
-                                <td>Holland, Mike</td>
-                                <td>£356.61</td>
-                                <td>CARD_PAYMENT</td>
+                                <td><%= @transaction.date %></td>
+                                <td><%= @transaction.payee %></td>
+                                <td>£<%= @transaction.amount %></td>
+                                <td><%= @transaction.transaction_type %></td>
                             </tr>
+                        </tbody>
+                        <tbody>
                             <tr>
-                                <td>Wed Nov 13 12:41:13 2020</td>
-                                <td>Smith, Karen</td>
-                                <td>£2000.00</td>
-                                <td>MANUAL_PAYMENT</td>
+                                <td><%= @transaction2.date %></td>
+                                <td><%= @transaction2.payee %></td>
+                                <td>£<%= @transaction2.amount %></td>
+                                <td><%= @transaction2.transaction_type %></td>
                             </tr>
+                        </tbody>
+                        <tbody>
                             <tr>
-                                <td>Wed Nov 15 07:43:13 2020</td>
-                                <td>Jonas M.</td>
-                                <td>£100.00</td>
-                                <td>RECEIVED</td>
+                                <td><%= @transaction3.date %></td>
+                                <td><%= @transaction3.payee %></td>
+                                <td>£<%= @transaction3.amount %></td>
+                                <td><%= @transaction3.transaction_type %></td>
                             </tr>
                         </tbody>
                     </table>
-                    </li>
-
-                    <li class="list-group-item">
-                      <h4>Account Number: 143520 | Balance: £999.99</h4>
-                      <table class="table table-hover">
-                        <thead>
-                            <tr>
-                                <th>Transaction Date</th>
-                                <th>Payment to/from</th>
-                                <th>Amount</th>
-                                <th>Description</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Wed Nov 12 17:43:13 2020</td>
-                                <td>Holland, Mike</td>
-                                <td>£356.61</td>
-                                <td>CARD_PAYMENT</td>
-                            </tr>
-                            <tr>
-                                <td>Wed Nov 13 12:41:13 2020</td>
-                                <td>Smith, Karen</td>
-                                <td>£2000.00</td>
-                                <td>MANUAL_PAYMENT</td>
-                            </tr>
-                            <tr>
-                                <td>Wed Nov 15 07:43:13 2020</td>
-                                <td>Jonas M.</td>
-                                <td>£100.00</td>
-                                <td>RECEIVED</td>
-                            </tr>
-                        </tbody>
-                      </table>
-                    </li>
-
-                    <li class="list-group-item">
-                      <h4>Account Number: 143520 | Balance: £999.99</h4>
-                      <table class="table table-hover">
-                        <thead>
-                            <tr>
-                                <th>Transaction Date</th>
-                                <th>Payment to/from</th>
-                                <th>Amount</th>
-                                <th>Description</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Wed Nov 12 17:43:13 2020</td>
-                                <td>Holland, Mike</td>
-                                <td>£356.61</td>
-                                <td>CARD_PAYMENT</td>
-                            </tr>
-                            <tr>
-                                <td>Wed Nov 13 12:41:13 2020</td>
-                                <td>Smith, Karen</td>
-                                <td>£2000.00</td>
-                                <td>MANUAL_PAYMENT</td>
-                            </tr>
-                            <tr>
-                                <td>Wed Nov 15 07:43:13 2020</td>
-                                <td>Jonas M.</td>
-                                <td>£100.00</td>
-                                <td>RECEIVED</td>
-                            </tr>
-                        </tbody>
-                      </table>
                     </li>
                 </ul>
             </div>
