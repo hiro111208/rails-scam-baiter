@@ -23,26 +23,6 @@ ActiveRecord::Schema.define(version: 2020_12_11_080958) do
     t.decimal "balance", default: "0.0"
   end
 
-  create_table "pages", force: :cascade do |t|
-    t.bigint "subject_id"
-    t.string "name"
-    t.string "permalink"
-    t.integer "position"
-    t.boolean "visible"
-    t.text "context"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["subject_id"], name: "index_pages_on_subject_id"
-  end
-
-  create_table "subjects", force: :cascade do |t|
-    t.string "name"
-    t.integer "position"
-    t.boolean "visible"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "transactions", force: :cascade do |t|
     t.string "payee"
     t.float "amount"
