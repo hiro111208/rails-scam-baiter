@@ -1,4 +1,10 @@
 class UsersController < ApplicationController
+
+  # user management must be done by only admin users
+
+  before_action :authenticate_user!, :admin_user
+
+
   def index
     @users = User.order('id ASC')
   end
@@ -56,5 +62,9 @@ class UsersController < ApplicationController
         :password,
         :password_confirmation
       )
+    end
+
+    def admin_user
+      redirect_to(root_url) unless current_user.admin?
     end
 end

@@ -5,6 +5,7 @@ class User < ApplicationRecord
 
   validates :firstName, presence: true, length: { maximum: 50 }
   validates :lastName, presence: true, length: { maximum: 50 }
+  validates :admin, presence: true, default: false
 
   has_many :accounts
 end
