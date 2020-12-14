@@ -9,6 +9,7 @@ class UserTest < ActiveSupport::TestCase
     @user = User.new(firstName: 'ExampleFirst',
                      lastName: 'ExampleLast',
                      email: 'user@example.com',
+                     admin: true,
                      password: 'seg2020',
                      password_confirmation: 'seg2020')
   end
@@ -37,6 +38,11 @@ class UserTest < ActiveSupport::TestCase
     assert_not @user.valid?
   end
 
+  test 'admin should be present' do
+    @user.admin = nil
+    assert_not @user.valid?
+  end
+
   test 'firstName should not be too long' do
     @user.firstName = 'a' * 51
     assert_not @user.valid?
@@ -44,6 +50,11 @@ class UserTest < ActiveSupport::TestCase
 
   test 'lastName should not be too long' do
     @user.lastName = 'a' * 51
+    assert_not @user.valid?
+  end
+
+  test 'email should contain @' do
+    @user.email = 'a' * 20
     assert_not @user.valid?
   end
 
