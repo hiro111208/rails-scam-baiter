@@ -7,16 +7,16 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/welcome">Home</a>
+          <a class="nav-link active" aria-current="page" <%= link_to "Home","welcome#index" %></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled" href="">Log In</a>
+          <a class="nav-link disabled" <%= link_to "Log In","bank_login/index" %></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="">Contact Us</a>
+          <a class="nav-link active" <%= link_to "Contact Us","" %></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="">Find your nearest branch</a>
+          <a class="nav-link active" <%= link_to "Find your nearest branch","" %></a>
         </li>
       </ul>
     </div>
