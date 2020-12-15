@@ -1,11 +1,8 @@
-<div class="transactions-index">
-  <h2>Transaction</h2>
+<div class="transactions-table">
+  <h2>Transactions</h2>
 
   <!-- The link to overview page is temporary. It should be in a navbar -->
-  <%= link_to("<< Back to Overview", root_path, :class => 'back-link') %>
-
-  <%= link_to("Add New Transaction", new_transaction_path, :class => 'action new') %>
-  <%= link_to("Show", 'show', :class => 'back-link') %>
+  <%= link_to("<< Back to Overview", users_path, :class => 'back-link') %>
 
   <table class="table" summary="transaction-list">
     <tr class="header">
@@ -13,8 +10,6 @@
       <th>Payee</th>
       <th>Amount</th>
       <th>Transaction Type</th>
-      <th>Account ID</th>
-      <th>Actions</th>
     </tr>
     <% @transactions.each do |transaction| %>
       <tr>
@@ -22,11 +17,6 @@
         <td class="center"><%= transaction.payee %></td>
         <td class="center"><%= "#{transaction.amount} #{Account.find(transaction.account_id).currency}" %></td>
         <td class="center"><%= transaction.transaction_type %></td>
-        <td class="center"><%= transaction.account_id %></td>
-        <td class="actions">
-          <%= link_to("Edit", edit_transaction_path(transaction), :class => 'action edit') %>
-          <%= link_to("Delete", delete_transaction_path(transaction), :class => 'action delete') %>
-        </td>
       </tr>
     <% end %>
   </table>

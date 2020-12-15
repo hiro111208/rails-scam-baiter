@@ -15,6 +15,12 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :transactions do
+    member do
+      get :delete
+    end
+  end
+
   get 'payments', to: 'payments#index'
   post 'payments', to: 'payments#create'
 
