@@ -9,7 +9,7 @@
 User.destroy_all
 Account.destroy_all
 Transaction.destroy_all
-user = User.create(firstName: 'TestF', lastName: 'TestL', email: 'test@example.com', admin:true, password: 'password', password_confirmation: 'password')
+user = User.create(firstName: 'TestF', lastName: 'TestL', email: 'test@example.com', admin: true, password: 'password', password_confirmation: 'password')
 account = user.accounts.create(currency: 0)
 
 account.transactions.create(payee: 'Starbucks', amount: 2.75, date: Date.new(2020, 12, 1), transaction_type: 0)
