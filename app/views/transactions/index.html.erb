@@ -19,74 +19,34 @@
           <a class="nav-link active" href="">Find your nearest branch</a>
         </li>
       </ul>
-
     </div>
   </div>
 </nav>
-
 <br>
 <div class="container">
-    <div class="row">
-        <div class="col-xs-10">
-            <div class="panel panel-primary">
-
-                <!-- Default panel contents -->
-                <div class="panel-heading">
-                    <h2 class="panel-title">
-                        Your Transaction History
-                    </h2>
-                </div>
-                <div class="panel-body">
-                  <h3>
-                        BEE, Team
-                  </h3>
-                </div>
-                <!-- <% @transactions.each do |transaction| %> -->
-                <!-- The below gets the three recent transactions but the code above will be more efficient but isn't working-->
-                <% @transaction = Transaction.first -%>
-                <% @transaction2 = Transaction.second -%>
-                <% @transaction3 = Transaction.third -%>
-                    <ul class="list-group">
-                    <li class="list-group-item">
-                      <% @account = Account.first -%>
-                    <h4>Balance: £<%= @account.balance %></h4>
-                    <table class="table table-hover">
-                        <thead>
-                            <tr>
-                                <th>Transaction Date</th>
-                                <th>Payment to/from</th>
-                                <th>Amount</th>
-                                <th>Description</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><%= @transaction.date %></td>
-                                <td><%= @transaction.payee %></td>
-                                <td>£<%= @transaction.amount %></td>
-                                <td><%= @transaction.transaction_type %></td>
-                            </tr>
-                        </tbody>
-                        <tbody>
-                            <tr>
-                                <td><%= @transaction2.date %></td>
-                                <td><%= @transaction2.payee %></td>
-                                <td>£<%= @transaction2.amount %></td>
-                                <td><%= @transaction2.transaction_type %></td>
-                            </tr>
-                        </tbody>
-                        <tbody>
-                            <tr>
-                                <td><%= @transaction3.date %></td>
-                                <td><%= @transaction3.payee %></td>
-                                <td>£<%= @transaction3.amount %></td>
-                                <td><%= @transaction3.transaction_type %></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
+  <h3>Your Transaction History</h3>
+  <br>
+  <% @account = Account.first # to be changed %>
+  <h4>Balance: £<%= @account.balance %></h4>
+  <br>
+  <table class="table">
+<thead class="thead-dark">
+  <tr>
+    <th scope="col">Transaction Date</th>
+    <th scope="col">Payee</th>
+    <th scope="col">Amount</th>
+    <th scope="col">Transaction Type</th>
+  </tr>
+</thead>
+<tbody>
+  <% @transactions.each do |transaction| %>
+  <tr>
+    <td><%= transaction.date.strftime("%A,%e %b %Y") %></td>
+    <td><%= transaction.payee %></td>
+    <td>£<%= transaction.amount %></td>
+    <td><%= transaction.transaction_type %></td>
+  </tr>
+  <% end %>
+</tbody>
+</table>
 </div>
