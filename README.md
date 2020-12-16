@@ -5,20 +5,21 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+## Deployment Instructions
+This assumes you're running a Ubuntu-based Linux system.
 
-* System dependencies
+### Ruby Dependencies
+You need Ruby version: `version here`
 
-* Configuration
+You can install the needed Ruby Gems by running: `command here`
 
-* Database creation
+### System Dependencies
+You need to install: `dependencies here`
 
-* Database initialization
+### Creating and Initialising the Database
 
-* How to run the test suite
+### Configuration
 
-* Services (job queues, cache servers, search engines, etc.)
+### How to run the automated test suite
 
-* Deployment instructions
-
-* ...
+### How to deploy publically
