@@ -1,0 +1,15 @@
+<%= link_to("<< Back to List", transactions_path, :class => 'back-link') %>
+
+<div class="transactions-edit">
+  <h2>Update Transaction</h2>
+
+  <%= form_for(@transaction) do |f| %>
+
+  <%= render(:partial => 'form', :locals => {:f => f})%>
+
+  <div class="form-buttons btn">
+    <%= f.submit("Update Transaction") %>
+  </div>
+
+<% end %>
+</div>

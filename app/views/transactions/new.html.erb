@@ -1,0 +1,15 @@
+<%= link_to("<< Back to List", transactions_path, :class => 'back-link') %>
+
+<div class="transactions-new">
+  <h2>Create Transaction</h2>
+
+  <%= form_for(@transaction, :url => transactions_path, :method => 'post') do |f| %>
+
+  <%= render(:partial => 'form', :locals => {:f => f})%>
+
+  <div class="form-buttons btn">
+    <%= f.submit("Create Transaction") %>
+  </div>
+
+<% end %>
+</div>

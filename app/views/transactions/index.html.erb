@@ -1,11 +1,12 @@
 <div class="transactions-index">
-  <h2>Transaction</h2>
+  <h2>Transaction Index</h2>
 
   <!-- The link to overview page is temporary. It should be in a navbar -->
   <%= link_to("<< Back to Overview", root_path, :class => 'back-link') %>
 
   <%= link_to("Add New Transaction", new_transaction_path, :class => 'action new') %>
-  <%= link_to("Show", 'show', :class => 'back-link') %>
+  <%= link_to("Show", 'transactions/show', :class => 'back-link') %>
+  <%= button_to "Generate Random Data", :method=> "edit_data" %>
 
   <table class="table" summary="transaction-list">
     <tr class="header">
