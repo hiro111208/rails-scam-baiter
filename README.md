@@ -15,7 +15,7 @@ You can install the needed Ruby Gems by running: `command here`
 You need to install: `dependencies here`
 
 ### Creating and Initialising the Database
-You need to use the software: `database software here`
+You need to use the database software: `PostgresSQL`. Other databases may work but are not tested.
 
 You need to have a table called: `table name here`
 
