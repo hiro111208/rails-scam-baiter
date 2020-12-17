@@ -3,13 +3,11 @@
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
-Things you may want to cover:
-
 ## Deployment Instructions
 This assumes you're running a Ubuntu-based Linux system.
 
 ### Ruby Dependencies
-You need Ruby version: `version here`
+You need Ruby version: `2.7.1`
 
 You can install the needed Ruby Gems by running: `command here`
 
@@ -17,9 +15,16 @@ You can install the needed Ruby Gems by running: `command here`
 You need to install: `dependencies here`
 
 ### Creating and Initialising the Database
+You need to use the software: `database software here`
+
+You need to have a table called: `table name here`
+
+You need to give it a username and password with access to the table. Remember them for later steps.
 
 ### Configuration
+Edit the `blah` file and 
 
 ### How to run the automated test suite
+Run the command: `testing command here`
 
 ### How to deploy publically
