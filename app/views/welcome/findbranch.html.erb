@@ -10,15 +10,15 @@
 }
 .top-left {
   position: absolute;
-  top: 20%;
-  left: 25%;
+  top: 45%;
+  left: 28%;
   transform: translate(-50%, -50%);
   font-size: 30px;
 }
 .comment {
   position: absolute;
-  top: 24%;
-  left: 33.5%;
+  top: 53%;
+  left: 30%;
   transform: translate(-50%, -50%);
   font-size: 15px;
 }
@@ -27,6 +27,9 @@
 }
 .card-text {
   font-size: 15px;
+}
+.mapouter {
+  transform: translate(3%, 0%);
 }
 </style>
 </head>
@@ -51,45 +54,36 @@
             <a class="nav-link active" <%= link_to "Contact Us","/welcome/contactus" %></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" <%= link_to "Find your nearest branch","/welcome/findbranch" %></a>
+            <a class="nav-link disabled" <%= link_to "Find your nearest branch","/welcome/findbranch" %></a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
   <img src="/banking.jpg" class="img-fluid" alt="/banking.jpg">
-  <div class="top-left">| Personal Banking</div>
-  <div class="comment">Bank easy. Bank secure. Bank online with Bee Bank.</div>
+  <div class="top-left">| Find your local branch</div>
+  <div class="comment">Providing you banking services nationwide.</div>
 <br>
-  <div class="row">
-    <div class="col-sm-4">
-      <div class="card" style="width: 18rem;">
-      <img src="/mobile.jpg" class="card-img-top" alt="...">
+</div>
+
+<div class="row">
+  <div class="col-sm-5">
+    <div class="mapouter">
+      <div class="gmap_canvas">
+        <iframe width="350" height="350" id="gmap_canvas" src="https://maps.google.com/maps?q=london&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+        <a <a <%= link_to "https://www.whatismyip-address.com/divi-discount/" %> ></a>></a>
+      </div><style>.mapouter{position:relative;text-align:right;height:350px;width:350px;}.gmap_canvas {overflow:hidden;background:none!important;height:350px;width:350px;}</style></div>
+  </div>
+  <div class="col-sm-5">
+    <div class="card" style="width: 28rem;">
       <div class="card-body">
-        <h5 class="card-title">Banking On-the-go</h5>
-        <p class="card-text">With our mobile banking app, you can explore features such as paying bills, transferring funds between accounts and locating our branches across the nation.</p>
-      </div>
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="card" style="width: 18rem;">
-      <img src="/uk.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Branches Nationwide</h5>
-        <p class="card-text">Visit any of our branches nationwide in order to register to use our services. Talk with our specialists and find out why our customers choose us.</p>
-      </div>
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="card" style="width: 18rem;">
-      <img src="/multaccount.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Personal Accounts</h5>
-        <p class="card-text">Contact us today to open up a new bank account. You can do this online, or over the phone. Talk with any of our advisors to choose which account is right for you. </p>
-      </div>
+        <h5 class="card-title">Find your nearest Bee Bank.</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Opening Times</h6>
+        <p class="card-text"><br>Monday 10:00-20:00 <br> Tuesday 10:00-20:00 <br> Wednesday 10:00-20:00 <br> Thursday 10:00-20:00 <br> Friday 10:00-20:00 <br> Saturday 10:00-17:30 <br> Sunday 10:00-13:00 <br><br>Please remember to wear a mask when visiting our branches. We strictly follow social distancing restrictions to help fight the spread of the virus.</p>
       </div>
     </div>
   </div>
 </div>
+
 </body>
 </html>

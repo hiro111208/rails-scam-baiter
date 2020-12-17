@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   #get 'welcome/index'
   # TODO: https://github.com/heartcombo/devise/wiki/How-to-Setup-Multiple-Devise-User-Models
 
-  #root to: "overview#index"
   root to: 'welcome#index'
 
   devise_scope :user do
@@ -24,6 +23,8 @@ Rails.application.routes.draw do
   get 'transactions', to: 'transactions#index'
 
   get 'welcome',  to: 'welcome#index'
+  get 'welcome/contactus', to: 'welcome#contactus'
+  get 'welcome/findbranch', to: 'welcome#findbranch'
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

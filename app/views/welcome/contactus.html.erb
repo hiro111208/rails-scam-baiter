@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    .container {
+      position: relative;
+      text-align: center;
+      color: white;
+    }
+    .top-left {
+      position: absolute;
+      top: 22%;
+      left: 20.5%;
+      transform: translate(-50%, -50%);
+      font-size: 30px;
+    }
+    .comment {
+      position: absolute;
+      top: 26%;
+      left: 41%;
+      transform: translate(-50%, -50%);
+      font-size: 15px;
+    }
+    .card-body {
+      color: black;
+    }
+    .card-text {
+      font-size: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand">Bee Bank</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" <%= link_to "Home","/welcome#index" %></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" <%= link_to "Log In","/bank_login/index" %></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" <%= link_to "Contact Us","/welcome/contactus" %></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" <%= link_to "Find your nearest branch","/welcome/findbranch" %></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <img src="/help.jpg" class="img-fluid" alt="/help.jpg">
+    <div class="top-left">| Contact Us</div>
+    <div class="comment">Here at Bee Bank, we are committed to providing help where it is needed.</div>
+    <br>
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="card" style="width: 28rem;">
+          <div class="card-body">
+            <h5 class="card-title">Coronavirus</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Help and Support</h6>
+            <p class="card-text">During this challenging time, our helplines are available to give you advice with regards to visiting our branches. Contact us now to receive latest updates.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="card" style="width: 28rem;">
+          <div class="card-body">
+            <h5 class="card-title">Have Questions?</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Chat with Us</h6>
+            <p class="card-text">Our specialists will be able to provide you with any information you need whether it be about opening accounts, finding which account is right for you and more.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="card" style="width: 28rem;">
+          <div class="card-body">
+            <h5 class="card-title">Account Support</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Update your information</h6>
+            <p class="card-text">Recently moved houses? Changed your phone number? Not a problem. With our mobile banking app, you can modify account details. For more help, reach out to our agents.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="card" style="width: 28rem;">
+          <div class="card-body">
+            <h5 class="card-title">Getting Help</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Available Times</h6>
+            <p class="card-text">Monday - Friday 10:00-20:00 <br> Saturday 10:00-17:30 <br> Sunday 10:00-13:00</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
