@@ -2,9 +2,18 @@
 
 one:
   firstName: MyString
-  lastName: MyString
-  email: test@test.com
+  lastName:  MyString
+  admin:     true
+  email:     test1@test.com
 
 two:
   firstName: MyString
-  lastName: MyString
+  lastName:  MyString
+  admin:     false
+  email:     test2@test.com
+
+three:
+  firstName: MyString
+  lastName:  MyString
+  admin:     false
+  email:     test3@test.com

@@ -221,4 +221,4 @@ yarn-debug.log*
 /storage/*
 !/storage/.keep
 
-# End of https://www.toptal.com/developers/gitignore/api/rails,macos,linux,intellij
+# End of https://www.toptal.com/developers/gitignore/api/rails,macos,linux,intellij.env
