@@ -4,6 +4,7 @@ class CreateTransactions < ActiveRecord::Migration[6.0]
       t.string :payee
       t.float :amount
       t.date :date
+      t.account_id :integer
 
       t.timestamps
     end
