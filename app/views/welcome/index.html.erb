@@ -1,95 +1,50 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-.container {
-  position: relative;
-  text-align: center;
-  color: white;
-}
-.top-left {
-  position: absolute;
-  top: 20%;
-  left: 25%;
-  transform: translate(-50%, -50%);
-  font-size: 30px;
-}
-.comment {
-  position: absolute;
-  top: 24%;
-  left: 33.5%;
-  transform: translate(-50%, -50%);
-  font-size: 15px;
-}
-.card-body {
-  color: black;
-}
-.card-text {
-  font-size: 15px;
-}
-</style>
-</head>
-<body>
+<%= stylesheet_link_tag "welcome" %>
 
-<div class="container">
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-      <a class="navbar-brand">Bee Bank</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" <%= link_to "Home","/welcome#index" %></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" <%= link_to "Log In","/bank_login/index" %></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" <%= link_to "Contact Us","/welcome/contactus" %></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" <%= link_to "Find your nearest branch","/welcome/findbranch" %></a>
-          </li>
-        </ul>
-      </div>
+<div>
+  <%= navigation_bar %>
+
+  <div class="container">
+    <div class="position-relative text-white">
+      <img src="/banking.jpg" class="img-fluid" alt="/banking.jpg">
+      <div class="top-left">| Personal Banking</div>
+      <div class="comment">Bank easy. Bank secure. Bank online with Bee Bank.</div>
     </div>
-  </nav>
-  <img src="/banking.jpg" class="img-fluid" alt="/banking.jpg">
-  <div class="top-left">| Personal Banking</div>
-  <div class="comment">Bank easy. Bank secure. Bank online with Bee Bank.</div>
-<br>
-  <div class="row">
-    <div class="col-sm-4">
-      <div class="card" style="width: 18rem;">
-      <img src="/telephone.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Banking On-the-go</h5>
-        <p class="card-text">With our mobile banking app, you can explore features such as paying bills, transferring funds between accounts and locating our branches across the nation.</p>
+
+    <div class="row mt-5">
+      <div class="col-md-4">
+        <div class="card">
+          <img src="/telephone.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Banking On-the-go</h5>
+            <p class="card-text">With our mobile banking app, you can explore features such as paying bills,
+              transferring
+              funds between accounts and locating our branches across the nation.</p>
+          </div>
+        </div>
       </div>
+
+      <div class="col-md-4">
+        <div class="card">
+          <img src="/nation.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Branches Nationwide</h5>
+            <p class="card-text">Visit any of our branches nationwide in order to register to use our services. Talk
+              with
+              our specialists and find out why our customers choose us.</p>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="card" style="width: 18rem;">
-      <img src="/nation.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Branches Nationwide</h5>
-        <p class="card-text">Visit any of our branches nationwide in order to register to use our services. Talk with our specialists and find out why our customers choose us.</p>
-      </div>
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="card" style="width: 18rem;">
-      <img src="/accounts.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Personal Accounts</h5>
-        <p class="card-text">Contact us today to open up a new bank account. You can do this online, or over the phone. Talk with any of our advisors to choose which account is right for you. </p>
-      </div>
+
+      <div class="col-md-4">
+        <div class="card">
+          <img src="/accounts.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Personal Accounts</h5>
+            <p class="card-text">Contact us today to open up a new bank account. You can do this online, or over the
+              phone. Talk with any of our advisors to choose which account is right for you. </p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
-</body>
-</html>
