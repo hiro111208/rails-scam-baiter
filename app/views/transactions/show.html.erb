@@ -13,7 +13,7 @@
     </tr>
     <% @transactions.each do |transaction| %>
       <tr>
-        <td class="center"><%= transaction.date %></td>
+        <td class="center"><%= transaction.date.strftime("%F") %></td>
         <td class="center"><%= transaction.payee %></td>
         <td class="center"><%= "#{transaction.amount} #{Account.find(transaction.account_id).currency}" %></td>
         <td class="center"><%= transaction.transaction_type %></td>
