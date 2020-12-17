@@ -38,11 +38,6 @@ class UserTest < ActiveSupport::TestCase
     assert_not @user.valid?
   end
 
-  test 'admin should be present' do
-    @user.admin = nil
-    assert_not @user.valid?
-  end
-
   test 'firstName should not be too long' do
     @user.firstName = 'a' * 51
     assert_not @user.valid?

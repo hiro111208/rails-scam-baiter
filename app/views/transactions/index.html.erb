@@ -7,6 +7,9 @@
   <%= link_to("Show", 'transactions/show', :class => 'back-link') %>
   <%= link_to("Add New Transaction", new_transaction_path, :class => 'action new') %>
 
+  <label class="label" for="name">Balance:
+    <%= "#{Account.find(@current_account.id).balance} #{Account.find(@current_account.id).currency}" %></label>
+
   <table class="table" summary="transaction-list">
     <tr class="header">
       <th>Date</th>

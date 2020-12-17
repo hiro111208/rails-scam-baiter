@@ -4,6 +4,8 @@
   <!-- The link to overview page is temporary. It should be in a navbar -->
   <%= link_to("<< Back to Transaction Index", transactions_path, :class => 'back-link') %>
 
+  <label class="label" for="name">Balance:
+    <%= "#{Account.find(@current_account.id).balance} #{Account.find(@current_account.id).currency}" %></label>
   <table class="table" summary="transaction-list">
     <tr class="header">
       <th>Date</th>
