@@ -1,9 +1,17 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## The Team: Team Bee
+Formed of:
+* Roubin Fatih
+* Juianne Diaz
+* Andrian Stoykov
+* Hiro Funatsuka
+* Skye Macdonald
 
-## Deployment Instructions
+## Deployed Version
+The url is `here`.
+
+## How to Run
 This assumes you're running a Ubuntu-based Linux system.
 
 ### Ruby Dependencies
