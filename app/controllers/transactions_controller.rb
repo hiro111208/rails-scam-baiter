@@ -77,7 +77,6 @@ class TransactionsController < ApplicationController
   # end
 
   def user_account
-    # TODO: This should be fixed to work with multiple accounts
     # current_user.accounts.find_by(id: session[:account_id])
     # current_user.accounts.find_by(params[:id])
     current_user.accounts.first

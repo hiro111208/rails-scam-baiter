@@ -18,11 +18,15 @@
         <li class="nav-item">
           <a class="nav-link active" <%= link_to "Find your nearest branch","" %></a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link active" <%= link_to_if(current_user.admin?, "Admin Page", users_path, :class => 'action index'){} %></a>
+        </li>
       </ul>
     </div>
   </div>
 </nav>
 <br>
+
 <div class="container">
 
   <!-- The link to overview page is temporary. It should be in a navbar -->
