@@ -2,11 +2,11 @@
 
 ## The Team: Team Bee
 Formed of:
-* Roubin Fatih
-* Julianne Diaz
-* Andrian Stoykov
-* Hiro Funatsuka
-* Skye Macdonald
+* Roubin Fatih (k19017279)
+* Julianne Diaz (k19013932)
+* Andrian Stoykov (k19027012)
+* Hiro Funatsuka (k1897500)
+* Skye Macdonald (k19015078)
 
 ## Deployed Version
 This app is deployed on Heroku at https://safe-headland-25619.herokuapp.com/
