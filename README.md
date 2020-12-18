@@ -11,33 +11,21 @@ Formed of:
 ## Deployed Version
 This app is deployed on Heroku at https://safe-headland-25619.herokuapp.com/
 
-## How to Run it Yourself
-This assumes you're running a Ubuntu-based Linux system.
+### Admin Account
+Username: `test@example.com`
+Password: `password`
 
-### Ruby Dependencies
-You need Ruby version: `2.7.1`  
-Newer or older versions will not work.
+### Regular Account
+Username: `bensmith@mail.com`
+Password: `password`
 
-You will need the gem `bundler` installed.
+## References and Sources
+"This project was created with the training provided by the lecture videos available on Keats for module 5CCS2SEG and 'Ruby on Rails 6 Essential Training' by instructor Kevin Skoglund through LinkedinLearning"
 
-You can install the needed Ruby Gems by running: `bundle install`.
-
-### Creating and Initialising the Database
-You need to use the database software: `PostgresSQL`. Other databases may work but are not tested.
-
-You need to have a table called: `table name here`
-
-You need to give it a username and password with access to the table. Remember them for later steps.
-
-The database server needs to be running.
-
-### Configuration
-Edit the `blah` file and 
-
-### How to run the automated test suite
-Run the command: `rails test`
-
-### How to run the server
-Run the command: `blah`  
-Go to the page: `blah`
-If you see any page warning you about database migrations, accept it to update the database and allow the app to launch.
+### Images
+Henderson, M., 2020. Green Plant In A Clear Glass Vase. Available at: <https://unsplash.com/photos/ZVprbBmT8QA> [Accessed 17 December 2020].
+Hazan, J., 2020. City Skyline During Night Time. Available at: <https://unsplash.com/photos/HDgR26ER51g> [Accessed 17 December 2020].
+Riedel, J., 2020. Gray Concrete Road Between Buildings. Available at: <https://unsplash.com/photos/alGtgU3MQu4> [Accessed 17 December 2020].
+Du Preez, P., 2020. Person Using Smartphone. Available at: <https://unsplash.com/photos/BjhUu6BpUZA> [Accessed 17 December 2020].
+Olmez, V., 2020. Black Click Pen Beside Macbook Pro On Table. Available at: <https://unsplash.com/photos/aG-pvyMsbis> [Accessed 17 December 2020].
+Czerwiński, P., 2020. Black And Brown Rotary Phone Near Grey Wall. Available at: <https://unsplash.com/photos/-0xCCPIbl3M> [Accessed 17 December 2020].
