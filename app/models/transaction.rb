@@ -3,7 +3,9 @@
 class Transaction < ApplicationRecord
   belongs_to :account
   enum transaction_type: %i[CARD_PAYMENT MANUAL_PAYMENT RECEIVED]
+
   validates :payee, presence: true, length: { maximum: 50 }
   validates :amount, presence: true
   validates :date, presence: true
+  validates :transaction_type, presence: true
 end

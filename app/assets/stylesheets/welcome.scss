@@ -1,0 +1,29 @@
+// Place all the styles related to the Welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.top-left {
+  position: absolute;
+  top: 20%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  font-size: 30px;
+}
+
+.comment {
+  position: absolute;
+  top: 35%;
+  left: 33.5%;
+  transform: translate(-50%, -50%);
+  font-size: 15px;
+}
+
+.mapouter {
+  position: relative;
+  text-align: right;
+}
+
+.gmap_canvas {
+  overflow: hidden;
+  background: none !important;
+}
