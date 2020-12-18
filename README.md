@@ -9,7 +9,7 @@ Formed of:
 * Skye Macdonald
 
 ## Deployed Version
-The url is `here`.
+This app is deployed on Heroku at https://safe-headland-25619.herokuapp.com/
 
 ## How to Run
 This assumes you're running a Ubuntu-based Linux system.
