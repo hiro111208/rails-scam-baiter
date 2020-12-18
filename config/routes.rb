@@ -1,9 +1,7 @@
+# frozen_string_literal: true
 Rails.application.routes.draw do
-  # TODO: https://github.com/heartcombo/devise/wiki/How-to-Setup-Multiple-Devise-User-Models
-
-  root to: 'overview#index'
-
   devise_scope :user do
+    root to: 'overview#index'
     get 'bank_login/index' => 'devise/sessions#new' # custom path to login/sign_in
   end
 
@@ -15,10 +13,16 @@ Rails.application.routes.draw do
     end
   end
 
+  get '/', to: 'welcome#index'
+
   get 'payments', to: 'payments#index'
   post 'payments', to: 'payments#create'
 
   get 'transactions', to: 'transactions#index'
+
+  get 'welcome',  to: 'welcome#index'
+  get 'welcome/contact-us', to: 'welcome#contactus'
+  get 'welcome/find-branch', to: 'welcome#findbranch'
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

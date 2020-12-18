@@ -1,128 +1,52 @@
-<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-
-<div class="container">
-    <div class="row">
-        <div class="col-xs-10">
-            <div class="panel panel-primary">
-
-                <!-- Default panel contents -->
-                <div class="panel-heading">
-                    <h2 class="panel-title">
-                        Your Transaction History
-                    </h2>
-                </div>
-                <div class="panel-body">
-                    <h3>
-                        BEE, Team (Change later)
-                    </h3>
-                </div>
-                    <ul class="list-group">
-
-                    <li class="list-group-item">
-                    <h4>Account Number: 143520 | Balance: £999.99</h4>
-                    <table class="table table-hover">
-                        <thead>
-                            <tr>
-                                <th>Transaction Date</th>
-                                <th>Payment to/from</th>
-                                <th>Amount</th>
-                                <th>Description</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Wed Nov 12 17:43:13 2020</td>
-                                <td>Holland, Mike</td>
-                                <td>£356.61</td>
-                                <td>CARD_PAYMENT</td>
-                            </tr>
-                            <tr>
-                                <td>Wed Nov 13 12:41:13 2020</td>
-                                <td>Smith, Karen</td>
-                                <td>£2000.00</td>
-                                <td>MANUAL_PAYMENT</td>
-                            </tr>
-                            <tr>
-                                <td>Wed Nov 15 07:43:13 2020</td>
-                                <td>Jonas M.</td>
-                                <td>£100.00</td>
-                                <td>RECEIVED</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    </li>
-
-                    <li class="list-group-item">
-                      <h4>Account Number: 143520 | Balance: £999.99</h4>
-                      <table class="table table-hover">
-                        <thead>
-                            <tr>
-                                <th>Transaction Date</th>
-                                <th>Payment to/from</th>
-                                <th>Amount</th>
-                                <th>Description</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Wed Nov 12 17:43:13 2020</td>
-                                <td>Holland, Mike</td>
-                                <td>£356.61</td>
-                                <td>CARD_PAYMENT</td>
-                            </tr>
-                            <tr>
-                                <td>Wed Nov 13 12:41:13 2020</td>
-                                <td>Smith, Karen</td>
-                                <td>£2000.00</td>
-                                <td>MANUAL_PAYMENT</td>
-                            </tr>
-                            <tr>
-                                <td>Wed Nov 15 07:43:13 2020</td>
-                                <td>Jonas M.</td>
-                                <td>£100.00</td>
-                                <td>RECEIVED</td>
-                            </tr>
-                        </tbody>
-                      </table>
-                    </li>
-
-                    <li class="list-group-item">
-                      <h4>Account Number: 143520 | Balance: £999.99</h4>
-                      <table class="table table-hover">
-                        <thead>
-                            <tr>
-                                <th>Transaction Date</th>
-                                <th>Payment to/from</th>
-                                <th>Amount</th>
-                                <th>Description</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Wed Nov 12 17:43:13 2020</td>
-                                <td>Holland, Mike</td>
-                                <td>£356.61</td>
-                                <td>CARD_PAYMENT</td>
-                            </tr>
-                            <tr>
-                                <td>Wed Nov 13 12:41:13 2020</td>
-                                <td>Smith, Karen</td>
-                                <td>£2000.00</td>
-                                <td>MANUAL_PAYMENT</td>
-                            </tr>
-                            <tr>
-                                <td>Wed Nov 15 07:43:13 2020</td>
-                                <td>Jonas M.</td>
-                                <td>£100.00</td>
-                                <td>RECEIVED</td>
-                            </tr>
-                        </tbody>
-                      </table>
-                    </li>
-                </ul>
-            </div>
-        </div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Bee Bank</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" <%= link_to "Home","welcome#index" %></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" <%= link_to "Log In","bank_login/index" %></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" <%= link_to "Contact Us","" %></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" <%= link_to "Find your nearest branch","" %></a>
+        </li>
+      </ul>
     </div>
+  </div>
+</nav>
+<br>
+<div class="container">
+  <h3>Your Transaction History</h3>
+  <br>
+  <% @account = Account.first # to be changed %>
+  <h4>Balance: £<%= @account.balance %></h4>
+  <br>
+  <table class="table">
+<thead class="thead-dark">
+  <tr>
+    <th scope="col">Transaction Date</th>
+    <th scope="col">Payee</th>
+    <th scope="col">Amount</th>
+    <th scope="col">Transaction Type</th>
+  </tr>
+</thead>
+<tbody>
+  <% @transactions.each do |transaction| %>
+  <tr>
+    <td><%= transaction.date.strftime("%A,%e %b %Y") %></td>
+    <td><%= transaction.payee %></td>
+    <td>£<%= transaction.amount %></td>
+    <td><%= transaction.transaction_type %></td>
+  </tr>
+  <% end %>
+</tbody>
+</table>
 </div>
