@@ -25,6 +25,6 @@ You need to give it a username and password with access to the table. Remember t
 Edit the `blah` file and 
 
 ### How to run the automated test suite
-Run the command: `testing command here`
+Run the command: `rails test`
 
 ### How to deploy publically
