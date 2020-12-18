@@ -1,25 +1,35 @@
-<div class="transactions-table">
-  <h2>Transactions</h2>
+<div class="container">
 
   <!-- The link to overview page is temporary. It should be in a navbar -->
   <%= link_to("<< Back to Transaction Index", transactions_path, :class => 'back-link') %>
+  <br>
+  <h3>Your Transaction History</h3>
+  <br>
+  <h4>Balance:
+    <%= "#{Account.find(@current_account.id).balance} #{Account.find(@current_account.id).currency}" %></h4>
+  <br>
+  <label class="label" for="name">Number of Transactions:
+    <%= @transactions.size %>
+  </label>
 
-  <label class="label" for="name">Balance:
-    <%= "#{Account.find(@current_account.id).balance} #{Account.find(@current_account.id).currency}" %></label>
   <table class="table" summary="transaction-list">
-    <tr class="header">
-      <th>Date</th>
-      <th>Payee</th>
-      <th>Amount</th>
-      <th>Transaction Type</th>
-    </tr>
-    <% @transactions.each do |transaction| %>
-      <tr>
-        <td class="center"><%= transaction.date.strftime("%F") %></td>
-        <td class="center"><%= transaction.payee %></td>
-        <td class="center"><%= "#{transaction.amount} #{Account.find(transaction.account_id).currency}" %></td>
-        <td class="center"><%= transaction.transaction_type %></td>
+    <thead class="thead-dark">
+      <tr class="header">
+        <th>Transaction Date</th>
+        <th>Payee</th>
+        <th>Amount</th>
+        <th>Transaction Type</th>
       </tr>
-    <% end %>
+    </thead>
+    <tbody>
+      <% @transactions.each do |transaction| %>
+        <tr>
+          <td class="center"><%= transaction.date.strftime("%A, %e %b %Y") %></td>
+          <td class="center"><%= transaction.payee %></td>
+          <td class="center"><%= "#{transaction.amount} #{Account.find(transaction.account_id).currency}" %></td>
+          <td class="center"><%= transaction.transaction_type %></td>
+        </tr>
+      <% end %>
+    </tbody>
   </table>
 </div>

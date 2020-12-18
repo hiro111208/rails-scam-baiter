@@ -1,54 +1,33 @@
 class TransactionsController < ApplicationController
   before_action :authenticate_user!
-  before_action :admin_user, only: %i[index new create edit delete destroy]
+  before_action :admin_user, only: %i[index create edit delete destroy]
 
   def index
     @current_account = user_account
-    @transactions = Transaction.order('date DESC').where(account_id: @current_account.id)
+    @transactions = Transaction.order('updated_at DESC').where(account_id: @current_account.id)
   end
 
+  # non-admin users have only access to show page
   def show
     @current_account = user_account
     @transactions = Transaction.order('date DESC').where(account_id: user_account.id)
   end
 
-  def new
-    @current_account = user_account
-    @transaction = @current_account.transactions.new
-    # @account_id = Account.find(@transaction.account_id).id
-    # @account_id = @account.id
-  end
-
+  # creates 10 random transactions
   def create
-    @current_account = user_account
-    @transaction = @current_account.transactions.new(transaction_params)
-    if @transaction.save
-      flash[:success] = 'Transaction created'
-      redirect_to(transactions_path)
-    else
-      render('new')
-    end
-  end
-
-  def generate_random
     @current_account = user_account
     @payees = []
     @amounts = []
     @transactions = Transaction.all
-    @transaction_types = %w[CARD_PAYMENT MANUAL_PAYMENT]
     @transactions.each do |transaction|
       @payees.push(transaction.payee)
       @amounts.push(transaction.amount)
     end
     (1..10).each do |_num|
-      # @transaction = @current_account.transactions.create(payee: @payees.sample, amount: rand(@amounts.min..@amounts.max).round(2), date: Date.today - (rand * 31), transaction_type: @transaction_types.sample)
-      @transaction = @current_account.transactions.new
-      @transaction.payee = @payees.sample
-      @transaction.amount = rand(@amounts.min..@amounts.max).round(2)
-      @transaction.date = Date.today - (rand * 31)
-      @transaction.transaction_type = @transaction_types.sample
-      @transaction.save
+      @transaction = @current_account.transactions.create(payee: @payees.sample, amount: rand(@amounts.min..@amounts.max).round(2), date: Date.today - (rand * 31), transaction_type: 0)
     end
+    flash[:success] = 'Random transactions created'
+    redirect_to(transactions_path)
   end
 
   def edit

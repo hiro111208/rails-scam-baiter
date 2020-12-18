@@ -22,18 +22,3 @@ account2.transactions.create(payee: 'Primark', amount: 50.55, date: Date.new(202
 account2.transactions.create(payee: 'ZARA', amount: 120.00, date: Date.new(2020, 4, 1), transaction_type: 0)
 account2.transactions.create(payee: 'H&M', amount: 20.0, date: Date.new(2020, 6, 2), transaction_type: 0)
 account2.transactions.create(payee: 'UNIQLO', amount: 27.5, date: Date.new(2020, 9, 3), transaction_type: 0)
-
-@payees = []
-@amounts = []
-@transactions = Transaction.all
-@transaction_types = %w[CARD_PAYMENT MANUAL_PAYMENT]
-@transactions.each do |transaction|
-  @payees.push(transaction.payee)
-  @amounts.push(transaction.amount)
-end
-@accounts = Account.all
-@accounts.each do |account|
-  (1..20).each do |_num|
-    account.transactions.create(payee: @payees.sample, amount: rand(@amounts.min..@amounts.max).round(2), date: Date.today - (rand * 31), transaction_type: @transaction_types.sample)
-  end
-end
