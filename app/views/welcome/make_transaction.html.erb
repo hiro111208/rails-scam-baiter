@@ -1,0 +1,36 @@
+<%= stylesheet_link_tag "welcome" %>
+
+<div>
+  <%= navigation_bar %>
+  <% if user_signed_in? %>
+  <ul>
+    <% @errors.each do |error|%>
+      <li><%= error %></li>
+    <% end %>
+
+  </ul>
+  <%= form_with url: 'save_transaction', local: true do |form| %>
+<div>
+  <%= form.label :account_from %><br>
+  <%= form.select :account_from, @accounts%>
+</div>
+
+<div>
+  <%= form.label :account_to %><br>
+  <%= form.select :account_to, @accounts %>
+</div>
+
+<div>
+  <%= form.label :amount %><br>
+  <%= form.text_field :amount %>
+</div>
+
+
+<div>
+  <%= form.submit "Transfer", data: { confirm: 'Are you sure?' }%>
+</div>
+<% end %>
+
+
+  <% end %>
+</div>
