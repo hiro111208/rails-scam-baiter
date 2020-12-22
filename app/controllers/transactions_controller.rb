@@ -25,17 +25,6 @@ class TransactionsController < ApplicationController
   # POST /transactions
   # POST /transactions.json
   def create
-    #@transaction = Transaction.new(transaction_params)
-
-    #respond_to do |format|
-    #  if @transaction.save
-    #    format.html { redirect_to @transaction, notice: 'Transaction was successfully created.' }
-    #    format.json { render :show, status: :created, location: @transaction }
-    #  else
-    #    format.html { render :new }
-    #    format.json { render json: @transaction.errors, status: :unprocessable_entity }
-    #  end
-    #end
     @payees = []
     @amounts = []
     @transactions = Transaction.all
