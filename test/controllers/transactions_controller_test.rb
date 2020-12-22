@@ -1,8 +1,15 @@
 require 'test_helper'
 
 class TransactionsControllerTest < ActionDispatch::IntegrationTest
+  include Devise::Test::IntegrationHelpers
   setup do
+    @admin_user = users(:one)
+    sign_in @admin_user
+    @account = accounts(:one)
+    @account.user_id = @admin_user.id
+    #@account.save
     @transaction = transactions(:one)
+    @transaction.account_id = @account.id
   end
 
   test "should get index" do
@@ -17,7 +24,7 @@ class TransactionsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create transaction" do
     assert_difference('Transaction.count') do
-      post transactions_url, params: { transaction: { account_id: @transaction.account_id, amount: @transaction.amount, balance: @transaction.balance, payee: @transaction.payee, transaction_type: @transaction.transaction_type } }
+      post transactions_url, params: { transaction: { account_id: @transaction.account_id, amount: @transaction.amount, balance: @transaction.balance, date: @transaction.date, payee: @transaction.payee, transaction_type: @transaction.transaction_type } }
     end
 
     assert_redirected_to transaction_url(Transaction.last)
@@ -34,7 +41,7 @@ class TransactionsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update transaction" do
-    patch transaction_url(@transaction), params: { transaction: { account_id: @transaction.account_id, amount: @transaction.amount, balance: @transaction.balance, payee: @transaction.payee, transaction_type: @transaction.transaction_type } }
+    patch transaction_url(@transaction), params: { transaction: { account_id: @transaction.account_id, amount: @transaction.amount, balance: @transaction.balance, date: @transaction.date, payee: @transaction.payee, transaction_type: @transaction.transaction_type } }
     assert_redirected_to transaction_url(@transaction)
   end
 

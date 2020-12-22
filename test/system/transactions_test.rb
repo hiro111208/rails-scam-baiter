@@ -17,6 +17,7 @@ class TransactionsTest < ApplicationSystemTestCase
     fill_in "Account", with: @transaction.account_id
     fill_in "Amount", with: @transaction.amount
     fill_in "Balance", with: @transaction.balance
+    fill_in "Date", with: @transaction.date
     fill_in "Payee", with: @transaction.payee
     fill_in "Transaction type", with: @transaction.transaction_type
     click_on "Create Transaction"
@@ -32,6 +33,7 @@ class TransactionsTest < ApplicationSystemTestCase
     fill_in "Account", with: @transaction.account_id
     fill_in "Amount", with: @transaction.amount
     fill_in "Balance", with: @transaction.balance
+    fill_in "Date", with: @transaction.date
     fill_in "Payee", with: @transaction.payee
     fill_in "Transaction type", with: @transaction.transaction_type
     click_on "Update Transaction"

@@ -35,6 +35,7 @@ class WelcomeControllerTest < ActionDispatch::IntegrationTest
     amount = 10
     post "/welcome/save_transaction", params: {account_from: account1.account_type,
     account_to: account2.account_type, amount: amount}
+    assert_redirected_to "/welcome/overview"
     assert account1.transactions.length == 1
     assert account2.transactions.length == 1
     transaction1 = account1.transactions.first
