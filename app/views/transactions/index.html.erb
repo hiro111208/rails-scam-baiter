@@ -4,8 +4,12 @@
 <div class="mx-2">
 <p id="notice"><%= notice %></p>
 
+<%= navigation_bar %>
+
 <h1>Transactions</h1>
 <%= link_to 'New Transaction', new_transaction_path, class:"btn btn-primary" %>
+
+<%= button_to "Generate Random Transaction History", {controller: 'transactions', action: 'create'} %>
 
 <table class="table">
   <thead>
