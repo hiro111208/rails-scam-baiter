@@ -1,8 +1,12 @@
 <p id="notice"><%= notice %></p>
 
+<%= navigation_bar %>
+
 <h1>Transactions</h1>
 
-<table>
+<%= button_to "Generate Random Transaction History", {controller: 'transactions', action: 'create'} %>
+
+<table class="table">
   <thead>
     <tr>
       <th>Account</th>
