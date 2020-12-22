@@ -1,8 +1,7 @@
-<div class="users-index">
-  <h2>Users</h2>
+<%= navigation_bar %>
 
-  <!-- The link to overview page is temporary. It should be in a navbar -->
-  <%= link_to("<< Back to Overview", root_path, :class => 'back-link') %>
+<div class="users-index mx-2">
+  <h2>Users</h2>
 
   <%= link_to("Add New User", new_user_path, :class => 'action new') %>
 
