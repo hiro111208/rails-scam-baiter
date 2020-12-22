@@ -9,15 +9,44 @@
         <li class="nav-item">
           <%= link_to "Home", "/welcome", class: "nav-link" %>
         </li>
+        <% unless user_signed_in? %>
         <li class="nav-item">
           <%= link_to "Log in", "/bank_login/index", class: "nav-link" %>
         </li>
+        <% end %>
         <li class="nav-item">
           <%= link_to "Contact us", "/welcome/contact-us", class: "nav-link" %>
         </li>
         <li class="nav-item">
           <%= link_to "Find your nearest branch", "/welcome/find-branch", class: "nav-link" %>
         </li>
+
+        <% if user_signed_in? %>
+        <% if current_user.admin %>
+        <li class="nav-item">
+          <%= link_to "Users", "/users", class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Accounts", "/accounts", class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Transactions", "/transactions", class: "nav-link" %>
+        </li>
+        <% else %>
+        <li class="nav-item">
+          <%= link_to "Overview", "/welcome/overview", class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Make transaction", "/welcome/make_transaction", class: "nav-link" %>
+        </li>
+        <% end %>
+        <li class="nav-item">
+          <%= link_to "Log out",  destroy_user_session_path, method: :delete, class: "nav-link" %>
+        </li>
+
+
+        <% end %>
+
       </ul>
     </div>
   </div>
