@@ -14,7 +14,7 @@ class UsersEditTest < ActionDispatch::IntegrationTest
                         password_confirmation: 'seg2020')
   end
 
-  test 'unsuccessful edit' do
+  test 'unsuccessful user edit' do
     sign_in @admin_user
     get edit_user_path(@user)
     assert_template 'users/edit'
@@ -27,7 +27,7 @@ class UsersEditTest < ActionDispatch::IntegrationTest
     assert_template 'users/edit'
   end
 
-  test 'successful edit' do
+  test 'successful user edit' do
     sign_in @admin_user
     get edit_user_path(@user)
     assert_template 'users/edit'
@@ -40,7 +40,7 @@ class UsersEditTest < ActionDispatch::IntegrationTest
     assert_redirected_to @user
   end
 
-  test 'non_admin edit should fail' do
+  test 'non_admin user edit should fail' do
     sign_in @non_admin_user
     get edit_user_path(@user)
     assert_template nil

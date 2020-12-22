@@ -63,3 +63,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'pry-rails'
 
 gem 'rails-controller-testing'
+
+gem 'simple_captcha2', require: 'simple_captcha'

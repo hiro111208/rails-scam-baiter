@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     get 'bank_login/index' => 'devise/sessions#new' # custom path to login/sign_in
   end
 
-  devise_for :users, path: 'bank_login', skip: [:registrations]
+  devise_for :users, controllers: {sessions: "users/sessions"}, path: 'bank_login', skip: [:registrations]
 
   resources :users do
     member do

@@ -26,6 +26,14 @@ ActiveRecord::Schema.define(version: 2020_12_22_013524) do
     t.string "iban"
   end
 
+  create_table "simple_captcha_data", id: :serial, force: :cascade do |t|
+    t.string "key", limit: 40
+    t.string "value", limit: 6
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["key"], name: "idx_key"
+  end
+
   create_table "transactions", force: :cascade do |t|
     t.string "payee"
     t.float "amount"
