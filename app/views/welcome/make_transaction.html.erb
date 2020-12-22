@@ -1,7 +1,7 @@
 <%= stylesheet_link_tag "welcome" %>
+<%= navigation_bar %>
+<div class="h-100 d-flex flex-column align-items-center justify-content-center">
 
-<div>
-  <%= navigation_bar %>
   <% if user_signed_in? %>
   <ul>
     <% @errors.each do |error|%>
@@ -9,25 +9,27 @@
     <% end %>
 
   </ul>
-  <%= form_with url: 'save_transaction', local: true do |form| %>
+  <%= form_with url: 'save_transaction', class: "border rounded shadow-sm p-5", local: true do |form| %>
 <div>
-  <%= form.label :account_from %><br>
-  <%= form.select :account_from, @accounts%>
+  <%= form.label :account_from, class:"form-label" %><br>
+  <%= form.select :account_from, @accounts, class:"form-control"%>
+
 </div>
 
 <div>
-  <%= form.label :account_to %><br>
-  <%= form.select :account_to, @accounts %>
+  <%= form.label :account_to, class:"form-label" %><br>
+  <%= form.select :account_to, @accounts, class:"form-control" %>
 </div>
 
 <div>
-  <%= form.label :amount %><br>
-  <%= form.text_field :amount %>
+  <%= form.label :amount, class:"form-label" %><br>
+  <%= form.text_field :amount, class:"form-control" %>
 </div>
 
-
+<br>
 <div>
-  <%= form.submit "Transfer", data: { confirm: 'Are you sure?' }%>
+  <%= form.submit "Transfer",class:"btn btn-primary", data: { confirm: 'Are you sure?' }%>
+
 </div>
 <% end %>
 

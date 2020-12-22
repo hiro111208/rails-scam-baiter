@@ -1,52 +1,35 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Bee Bank</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" <%= link_to "Home","welcome#index" %></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" <%= link_to "Log In","bank_login/index" %></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" <%= link_to "Contact Us","" %></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" <%= link_to "Find your nearest branch","" %></a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-<br>
-<div class="container">
-  <h3>Your Transaction History</h3>
-  <br>
-  <% @account = Account.first # to be changed %>
-  <h4>Balance: £<%= @account.balance %></h4>
-  <br>
-  <table class="table">
-<thead class="thead-dark">
-  <tr>
-    <th scope="col">Transaction Date</th>
-    <th scope="col">Payee</th>
-    <th scope="col">Amount</th>
-    <th scope="col">Transaction Type</th>
-  </tr>
-</thead>
-<tbody>
-  <% @transactions.each do |transaction| %>
-  <tr>
-    <td><%= transaction.date.strftime("%A,%e %b %Y") %></td>
-    <td><%= transaction.payee %></td>
-    <td>£<%= transaction.amount %></td>
-    <td><%= transaction.transaction_type %></td>
-  </tr>
-  <% end %>
-</tbody>
+<p id="notice"><%= notice %></p>
+
+<h1>Transactions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Account</th>
+      <th>Payee</th>
+      <th>Amount</th>
+      <th>Transaction type</th>
+      <th>Balance</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @transactions.each do |transaction| %>
+      <tr>
+        <td><%= transaction.account_id %></td>
+        <td><%= transaction.payee %></td>
+        <td><%= transaction.amount %></td>
+        <td><%= transaction.transaction_type %></td>
+        <td><%= transaction.balance %></td>
+        <td><%= link_to 'Show', transaction %></td>
+        <td><%= link_to 'Edit', edit_transaction_path(transaction) %></td>
+        <td><%= link_to 'Destroy', transaction, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
-</div>
+
+<br>
+
+<%= link_to 'New Transaction', new_transaction_path %>

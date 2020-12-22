@@ -1,6 +1,20 @@
 // Place all the styles related to the Welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+body {
+ background-image: url("https://images.theconversation.com/files/310057/original/file-20200114-151829-sg9hr7.jpg");
+ background-color: #cccccc;
+ background-position: center;
+ background-repeat: no-repeat;
+ background-size: cover;
+}
+
+.main{
+ padding: 20px;
+}
+table{
+  background-color: white;
+}
 
 .top-left {
   position: absolute;
@@ -28,6 +42,7 @@
   background: none !important;
 }
 h1{
+  text-align: center;
   padding: 20px;
 }
 th{
@@ -36,6 +51,10 @@ th{
 td{
 padding: 20px;
 }
+.accounts{
+  display: flex;
+}
 .account{
   padding: 20px;
+  margin: auto;
 }
