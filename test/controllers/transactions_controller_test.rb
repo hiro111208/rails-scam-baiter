@@ -7,7 +7,6 @@ class TransactionsControllerTest < ActionDispatch::IntegrationTest
     sign_in @admin_user
     @account = accounts(:one)
     @account.user_id = @admin_user.id
-    #@account.save
     @transaction = transactions(:one)
     @transaction.account_id = @account.id
   end

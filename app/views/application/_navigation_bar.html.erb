@@ -32,14 +32,12 @@
               <%= link_to "Overview", "/welcome/overview", class: "nav-link" %>
             </li>
             <li class="nav-item">
-              <%= link_to "Make transaction", "/welcome/make_transaction", class: "nav-link" %>
+              <%= link_to "Transfer between your accounts", "/welcome/make_transaction", class: "nav-link" %>
             </li>
             <li class="nav-item">
-              <%= link_to "Make payment", "/payments", class: "nav-link" %>
+              <%= link_to "Pay someone", "/payments", class: "nav-link" %>
             </li>
           <% end %>
-        <% end %>
-<<<<<<< HEAD
         <li class="nav-item">
           <%= link_to "Log out",  destroy_user_session_path, method: :delete, class: "nav-link" %>
         </li>
@@ -48,17 +46,6 @@
           <%= link_to "Log in", "/bank_login/index", class: "nav-link" %>
         </li>
 
-=======
->>>>>>> master
-
-        <% if user_signed_in? %>
-          <li class="nav-item">
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
-          </li>
-        <% else %>
-          <li class="nav-item">
-            <%= link_to "Log in", "/bank_login/index", class: "nav-link" %>
-          </li>
         <% end %>
       </ul>
     </div>

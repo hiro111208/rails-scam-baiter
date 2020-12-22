@@ -1,34 +1,65 @@
+<%= stylesheet_link_tag "welcome" %>
+<%= navigation_bar %>
+
 <p id="notice"><%= notice %></p>
+<%= link_to '<< Back to Accounts', accounts_path, class: "btn btn-light" %>
+<div class="row justify-content-center">
+  <div class="col-md-6">
 
-<p>
-  <strong>Account:</strong>
-  <%= @transaction.account_id %>
-</p>
+    <div class="row border-bottom">
+      <div class="col-6 py-2">
+        Account:
+      </div>
+      <div class="col-6 border-left alert-info py-2">
+        <%= @transaction.account_id %>
+      </div>
+    </div>
 
-<p>
-  <strong>Payee:</strong>
-  <%= @transaction.payee %>
-</p>
+    <div class="row border-bottom">
+      <div class="col-6 py-2">
+        Payee:
+      </div>
+      <div class="col-6 border-left alert-info py-2">
+        <%= @transaction.payee %>
+      </div>
+    </div>
 
-<p>
-  <strong>Amount:</strong>
-  <%= @transaction.amount %>
-</p>
+    <div class="row border-bottom">
+      <div class="col-6 py-2">
+        Amount:
+      </div>
+      <div class="col-6 border-left alert-info py-2">
+        <%= @transaction.amount %>
+      </div>
+    </div>
 
-<p>
-  <strong>Transaction type:</strong>
-  <%= @transaction.transaction_type %>
-</p>
+    <div class="row border-bottom">
+      <div class="col-6 py-2">
+        Transaction type:
+      </div>
+      <div class="col-6 border-left alert-info py-2">
+        <%= @transaction.transaction_type %>
+      </div>
+    </div>
 
-<p>
-  <strong>Balance:</strong>
-  <%= @transaction.balance %>
-</p>
 
-<p>
-  <strong>Date:</strong>
-  <%= @transaction.date %>
-</p>
+    <div class="row border-bottom">
+      <div class="col-6 py-2">
+        Balance:
+      </div>
+      <div class="col-6 border-left alert-info py-2">
+        <%= @transaction.balance %>
+      </div>
+    </div>
 
-<%= link_to 'Edit', edit_transaction_path(@transaction) %> |
-<%= link_to 'Back', transactions_path %>
+    <div class="row border-bottom">
+      <div class="col-6 py-2">
+        Date:
+      </div>
+      <div class="col-6 border-left alert-info py-2">
+        <%= @transaction.date %>
+      </div>
+    </div>
+
+</div>
+</div>
