@@ -7,6 +7,15 @@
 
     <div class="row border-bottom">
       <div class="col-6 py-2">
+        First name:
+      </div>
+      <div class="col-6 border-left alert-info py-2">
+        <%= @user.firstName %>
+      </div>
+    </div>
+
+    <div class="row border-bottom">
+      <div class="col-6 py-2">
         Last name:
       </div>
       <div class="col-6 border-left alert-info py-2">
@@ -20,15 +29,6 @@
       </div>
       <div class="col-6 border-left alert-info py-2">
         <%= @user.email %>
-      </div>
-    </div>
-
-    <div class="row border-bottom">
-      <div class="col-6 py-2">
-        Last name:
-      </div>
-      <div class="col-6 border-left alert-info py-2">
-        <%= @user.lastName %>
       </div>
     </div>
 
