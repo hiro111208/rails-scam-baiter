@@ -25,17 +25,32 @@ class TransactionsController < ApplicationController
   # POST /transactions
   # POST /transactions.json
   def create
-    @transaction = Transaction.new(transaction_params)
+    #@transaction = Transaction.new(transaction_params)
 
-    respond_to do |format|
-      if @transaction.save
-        format.html { redirect_to @transaction, notice: 'Transaction was successfully created.' }
-        format.json { render :show, status: :created, location: @transaction }
-      else
-        format.html { render :new }
-        format.json { render json: @transaction.errors, status: :unprocessable_entity }
+    #respond_to do |format|
+    #  if @transaction.save
+    #    format.html { redirect_to @transaction, notice: 'Transaction was successfully created.' }
+    #    format.json { render :show, status: :created, location: @transaction }
+    #  else
+    #    format.html { render :new }
+    #    format.json { render json: @transaction.errors, status: :unprocessable_entity }
+    #  end
+    #end
+    @payees = []
+    @amounts = []
+    @transactions = Transaction.all
+    @accounts = Account.all
+    @transactions.each do |transaction|
+      @payees.push(transaction.payee)
+      @amounts.push(transaction.amount)
+    end
+    (1..10).each do |_num|
+      @accounts.each do |account|
+        account.transactions.create(payee: @payees.sample, amount: rand(@amounts.min..0).round(2), date: Date.today - (rand * 31), transaction_type: rand(0..1), balance: 0)
       end
     end
+    flash[:success] = "Random transactions created"
+    redirect_to(root_url)
   end
 
   # PATCH/PUT /transactions/1
