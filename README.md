@@ -19,6 +19,13 @@ Password: `password`
 Username: `test@example.com`
 Password: `password`
 
+## Prerequisities
+You must install the following on your machine for the captcha to appear
+
+'sudo apt install ghostscript'
+'sudo apt install imagemagick'
+
+
 ## References and Sources
 This project was created with the training provided by the lecture videos available on Keats for module 5CCS2SEG and 'Ruby on Rails 6 Essential Training' by instructor Kevin Skoglund through LinkedinLearning.
 
