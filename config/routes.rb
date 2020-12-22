@@ -21,7 +21,12 @@ Rails.application.routes.draw do
   post 'payments', to: 'payments#create'
 
   get 'themes', to: 'themes#themes'
-
+  get 'ocean', to: 'themes#ocean'
+  get 'clouds', to: 'themes#clouds'
+  get 'mountain', to: 'themes#mountain'
+  get 'wall', to: 'themes#wall'
+  get 'bee', to: 'themes#bee'
+  get 'gradient', to: 'themes#gradient'
 
   get 'welcome',  to: 'welcome#index'
   get 'welcome/contact-us', to: 'welcome#contactus'

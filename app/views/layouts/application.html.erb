@@ -10,6 +10,7 @@
 </head>
 
 <body>
+  <div class="background" style="background-image: url(<%= $background_path %>);">
 <div>
   <% unless flash.empty? %>
     <script type="text/javascript">
@@ -24,6 +25,7 @@
 </div>
 <div>
   <%= yield %>
+</div>
 </div>
 </body>
 </html>

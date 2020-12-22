@@ -33,3 +33,5 @@ Grigoriev, D., 2020. Honeybee perching on yellow flower. Available at: <https://
 V2osk., 2020. Foggy Mountain Summit. Available at: <https://unsplash.com/photos/1Z2niiBPg5A> [Accessed 22 December 2020].
 Humpfer, J., 2020. Water Splashes Gray Rocks. Available at: <https://unsplash.com/photos/FIXBXHY66FY> [Accessed 22 December 2020].
 Kutsaev, R., 2020. Cloudy Sky. Available at: <https://unsplash.com/photos/8P-uQaTd8rw> [Accessed 22 December 2020].
+Couto, C., 2020. Gradient. Available at: <https://unsplash.com/photos/TIvFLeqZ4ec> [Accessed 22 December 2020].
+Woods, J., 2020. White Brick Wall. Available at: <https://unsplash.com/photos/4Zaq5xY5M_c> [Accessed 22 December 2020].
