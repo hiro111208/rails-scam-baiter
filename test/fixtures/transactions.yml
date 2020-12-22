@@ -3,9 +3,13 @@
 one:
   payee: MyString
   amount: 1.5
+  balance: 10
   date: 2020-11-29
+  transaction_type: 0
 
 two:
   payee: MyString
   amount: 1.5
   date: 2020-11-29
+  balance: 10
+  transaction_type: 0

@@ -3,9 +3,11 @@ class PaymentsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    account = user_account
-    @currency = account.currency
-    @transactions = account.transactions.order(created_at: :desc).first(5)
+    if not current_user
+      redirect_to root_path
+    else
+      @accounts = current_user.accounts.map { |account| account.account_type }
+    end
   end
 
   def create
@@ -15,7 +17,7 @@ class PaymentsController < ApplicationController
     iban = params[:iban]
     country = params[:country]
 
-    account = user_account
+    account = current_user.accounts.find_by account_type: params[:account]
     balance = account.balance
 
     if !iban.start_with?(country)
@@ -30,10 +32,6 @@ class PaymentsController < ApplicationController
     end
   end
 
-  private
 
-  def user_account
-    # TODO: This should be fixed to work with multiple accounts
-    current_user.accounts.take
-  end
+
 end

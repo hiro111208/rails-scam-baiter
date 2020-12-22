@@ -1,5 +1,9 @@
-<h1>New Transaction</h1>
+<%= stylesheet_link_tag "welcome" %>
+<%= navigation_bar %>
+
+<h2>New Transaction</h2>
+<%= link_to '<< Back to Transactions', transactions_path, class: "btn btn-light" %>
+
+
 
 <%= render 'form', transaction: @transaction %>
-
-<%= link_to 'Back', transactions_path %>

@@ -10,33 +10,41 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+  <div class="field mb-3">
     <%= form.label :account_id %>
     <%= form.text_field :account_id %>
   </div>
 
-  <div class="field">
+  <div class="field mb-3">
     <%= form.label :payee %>
     <%= form.text_field :payee %>
   </div>
 
-  <div class="field">
+  <div class="field mb-3">
     <%= form.label :amount %>
-    <%= form.text_field :amount %>
+    <%= form.text_field :amount, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="field mb-3">
     <%= form.label :transaction_type %>
-    <%= form.text_field :transaction_type %>
+    <%= form.text_field :transaction_type, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="field mb-3">
     <%= form.label :balance %>
-    <%= form.text_field :balance %>
+    <%= form.text_field :balance, class: 'form-control' %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="field mb-3">
+    <%= form.label :date %>
+    <%= form.datetime_select :date, class: 'form-control' %>
+  </div>
+
+  <div class="actions mt-2">
+    <%= form.submit class: 'btn btn-primary' %>
+  </div>
+  </div>
   </div>
 <% end %>

@@ -74,9 +74,6 @@ class TransactionsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def transaction_params
-      params.require(:transaction).permit(:account_id, :payee, :amount, :transaction_type, :balance)
-    end
-    def admin_user
-      redirect_to(root_url) unless current_user.admin?
+      params.require(:transaction).permit(:account_id, :payee, :amount, :transaction_type, :balance, :date)
     end
 end

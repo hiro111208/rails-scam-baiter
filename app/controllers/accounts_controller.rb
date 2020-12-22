@@ -72,7 +72,5 @@ class AccountsController < ApplicationController
     def account_params
       params.require(:account).permit(:user_id, :currency, :balance, :account_type, :account_number, :iban)
     end
-    def admin_user
-      redirect_to(root_url) unless current_user.admin?
-    end
+
 end
