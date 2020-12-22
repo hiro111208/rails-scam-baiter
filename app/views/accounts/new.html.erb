@@ -1,5 +1,6 @@
-<h1>New Account</h1>
+<%= navigation_bar %>
+
+<h2>New Account</h2>
+<%= link_to '<< Back to Accounts', accounts_path %>
 
 <%= render 'form', account: @account %>
-
-<%= link_to 'Back', accounts_path %>
