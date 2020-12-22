@@ -16,6 +16,7 @@
           <%= f.label :password, class:"form-label" %><br/>
           <%= f.password_field :password, autocomplete: "current-password", class:"form-control" %>
         </div>
+        <%= show_simple_captcha(:label => "Enter letters from image above", :placeholder => "Fill in here") %>
         <% if devise_mapping.rememberable? %>
           <div class="field">
             <%= f.check_box :remember_me, class:"form-check-input" %>
