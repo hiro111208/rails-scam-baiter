@@ -2,6 +2,7 @@
 require 'test_helper'
 
 class TransactionTest < ActiveSupport::TestCase
+
   test 'should not save transaction without payee' do
     account_id = accounts(:one).id
     transaction = Transaction.new(amount: 15.5, date: Time.now, transaction_type: 1, account_id: account_id)
