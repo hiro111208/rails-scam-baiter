@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 Rails.application.routes.draw do
+  get 'themes/themes'
   devise_scope :user do
     root to:'welcome#index'
     #root to: 'overview#index'
@@ -19,6 +20,7 @@ Rails.application.routes.draw do
   get 'payments', to: 'payments#index'
   post 'payments', to: 'payments#create'
 
+  get 'themes', to: 'themes#themes'
 
 
   get 'welcome',  to: 'welcome#index'

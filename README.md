@@ -12,11 +12,11 @@ Formed of:
 This app is deployed on Heroku at https://safe-headland-25619.herokuapp.com/
 
 ### Admin Account
-Username: `test@example.com`
+Username: `admin@example.com`
 Password: `password`
 
 ### Regular Account
-Username: `bensmith@mail.com`
+Username: `test@example.com`
 Password: `password`
 
 ## References and Sources
@@ -29,3 +29,7 @@ Riedel, J., 2020. Gray Concrete Road Between Buildings. Available at: <https://u
 Du Preez, P., 2020. Person Using Smartphone. Available at: <https://unsplash.com/photos/BjhUu6BpUZA> [Accessed 17 December 2020].
 Olmez, V., 2020. Black Click Pen Beside Macbook Pro On Table. Available at: <https://unsplash.com/photos/aG-pvyMsbis> [Accessed 17 December 2020].
 Czerwiński, P., 2020. Black And Brown Rotary Phone Near Grey Wall. Available at: <https://unsplash.com/photos/-0xCCPIbl3M> [Accessed 17 December 2020].
+Grigoriev, D., 2020. Honeybee perching on yellow flower. Available at: <https://images.theconversation.com/files/310057/original/file-20200114-151829-sg9hr7.jpg> [Accessed 21 December 2020].
+V2osk., 2020. Foggy Mountain Summit. Available at: <https://unsplash.com/photos/1Z2niiBPg5A> [Accessed 22 December 2020].
+Humpfer, J., 2020. Water Splashes Gray Rocks. [image] Available at: <https://unsplash.com/photos/FIXBXHY66FY> [Accessed 22 December 2020].
+Kutsaev, R., 2020. Cloudy Sky. [image] Available at: <https://unsplash.com/photos/8P-uQaTd8rw> [Accessed 22 December 2020].
