@@ -1,4 +1,6 @@
-<%= link_to("<< Back to List", users_path, :class => 'back-link') %>
+<%= navigation_bar %>
+
+<%= link_to("<< Back to Users", users_path, :class => 'back-link') %>
 
 <div class="users-edit container">
   <h2>Update User</h2>
@@ -8,7 +10,7 @@
   <%= render(:partial => 'form', :locals => {:f => f})%>
 
   <div class="form-buttons btn">
-    <%= f.submit("Update User") %>
+    <%= f.submit("Update User", class: "btn btn-primary") %>
   </div>
 
 <% end %>
