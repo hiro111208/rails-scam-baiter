@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 Rails.application.routes.draw do
   devise_scope :user do
-    root to: 'overview#index'
+    root to:'welcome#index'
+    #root to: 'overview#index'
     get 'bank_login/index' => 'devise/sessions#new' # custom path to login/sign_in
   end
 
@@ -24,11 +25,18 @@ Rails.application.routes.draw do
   get 'payments', to: 'payments#index'
   post 'payments', to: 'payments#create'
 
-  get 'transactions', to: 'transactions#index'
+
 
   get 'welcome',  to: 'welcome#index'
   get 'welcome/contact-us', to: 'welcome#contactus'
   get 'welcome/find-branch', to: 'welcome#findbranch'
+  get 'welcome/overview', to: 'welcome#overview'
+  get 'welcome/make_transaction', to: 'welcome#make_transaction'
+  post 'welcome/save_transaction', to: 'welcome#save_transaction'
+  get 'welcome/transactions/:account_id', to: 'welcome#transactions'
+  resources :accounts
+  resources :transactions
+  #get 'Log out', to: 'welcome#index'
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

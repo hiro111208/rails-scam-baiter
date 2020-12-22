@@ -1,35 +1,29 @@
-<div class="container">
+<p id="notice"><%= notice %></p>
 
-  <!-- The link to overview page is temporary. It should be in a navbar -->
-  <%= link_to("<< Back to Transaction Index", transactions_path, :class => 'back-link') %>
-  <br>
-  <h3>Your Transaction History</h3>
-  <br>
-  <h4>Balance:
-    <%= "#{Account.find(@current_account.id).balance} #{Account.find(@current_account.id).currency}" %></h4>
-  <br>
-  <label class="label" for="name">Number of Transactions:
-    <%= @transactions.size %>
-  </label>
+<p>
+  <strong>Account:</strong>
+  <%= @transaction.account_id %>
+</p>
 
-  <table class="table" summary="transaction-list">
-    <thead class="thead-dark">
-      <tr class="header">
-        <th>Transaction Date</th>
-        <th>Payee</th>
-        <th>Amount</th>
-        <th>Transaction Type</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @transactions.each do |transaction| %>
-        <tr>
-          <td class="center"><%= transaction.date.strftime("%A, %e %b %Y") %></td>
-          <td class="center"><%= transaction.payee %></td>
-          <td class="center"><%= "#{transaction.amount} #{Account.find(transaction.account_id).currency}" %></td>
-          <td class="center"><%= transaction.transaction_type %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-</div>
+<p>
+  <strong>Payee:</strong>
+  <%= @transaction.payee %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @transaction.amount %>
+</p>
+
+<p>
+  <strong>Transaction type:</strong>
+  <%= @transaction.transaction_type %>
+</p>
+
+<p>
+  <strong>Balance:</strong>
+  <%= @transaction.balance %>
+</p>
+
+<%= link_to 'Edit', edit_transaction_path(@transaction) %> |
+<%= link_to 'Back', transactions_path %>

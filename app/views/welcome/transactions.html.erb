@@ -1,0 +1,34 @@
+<%= stylesheet_link_tag "welcome" %>
+<%= navigation_bar %>
+<div class="main">
+
+  <% if user_signed_in? %>
+
+  <h3>Your Transaction History</h3>
+  <br>
+  <h4>Balance: <%= @account.currency %> <%= @account.balance %></h4>
+  <br>
+  <table class="table">
+<thead class="thead-dark">
+  <tr>
+    <th scope="col">Transaction Date</th>
+    <th scope="col">Payee</th>
+    <th scope="col">Amount</th>
+    <th scope="col">Balance</th>
+    <th scope="col">Transaction Type</th>
+  </tr>
+</thead>
+<tbody>
+  <% @account.transactions.order('date DESC').each do |transaction| %>
+  <tr>
+    <td><%= transaction.date.strftime("%A,%e %b %Y") %></td>
+    <td><%= transaction.payee %></td>
+    <td><%= @account.currency %> <%= transaction.amount %></td>
+    <td><%= @account.currency %> <%= transaction.balance %></td>
+    <td><%= transaction.transaction_type %></td>
+  </tr>
+  <% end %>
+</tbody>
+</table>
+<% end %>
+</div>

@@ -7,7 +7,7 @@ class BankLoginControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get login" do
-    get bank_login_login_url
+    get new_user_session_url
     assert_response :success
   end
 
