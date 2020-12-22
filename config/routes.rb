@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 Rails.application.routes.draw do
+  get 'themes/themes'
   devise_scope :user do
     root to:'welcome#index'
     #root to: 'overview#index'
@@ -19,7 +20,13 @@ Rails.application.routes.draw do
   get 'payments', to: 'payments#index'
   post 'payments', to: 'payments#create'
 
-
+  get 'themes', to: 'themes#themes'
+  get 'ocean', to: 'themes#ocean'
+  get 'clouds', to: 'themes#clouds'
+  get 'mountain', to: 'themes#mountain'
+  get 'wall', to: 'themes#wall'
+  get 'bee', to: 'themes#bee'
+  get 'gradient', to: 'themes#gradient'
 
   get 'welcome',  to: 'welcome#index'
   get 'welcome/contact-us', to: 'welcome#contactus'
