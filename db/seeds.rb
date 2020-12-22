@@ -9,16 +9,23 @@
 User.destroy_all
 Account.destroy_all
 Transaction.destroy_all
-user1 = User.create(firstName: 'TestF', lastName: 'TestL', email: 'test@example.com', admin: true, password: 'password', password_confirmation: 'password')
-account1 = user1.accounts.create(currency: 0)
-account1.transactions.create(payee: 'Starbucks', amount: 2.75, date: Date.new(2020, 12, 1), transaction_type: 0)
-account1.transactions.create(payee: 'McDonalds', amount: 9.25, date: Date.new(2020, 12, 1), transaction_type: 0)
-account1.transactions.create(payee: 'Wasabi', amount: 5.75, date: Date.new(2020, 12, 2), transaction_type: 0)
-account1.transactions.create(payee: 'Shell', amount: 27.5, date: Date.new(2020, 12, 3), transaction_type: 0)
+admin = User.create(firstName: 'AdminF', lastName: 'AdminL', email: 'admin@example.com', admin: true, password: 'password', password_confirmation: 'password')
+user = User.create(firstName: 'TestF', lastName: 'TestL', email: 'test@example.com', admin: false, password: 'password', password_confirmation: 'password')
+account = user.accounts.create(currency: 0, account_type: "Current_account", account_number: "1234", iban: "12-34-56")
 
-user2 = User.create(firstName: 'Paul', lastName: 'Smith', email: 'paul.smith@gmail.com', admin: false, password: 'seg2020', password_confirmation: 'seg2020')
-account2 = user2.accounts.create(currency: 1)
-account2.transactions.create(payee: 'Primark', amount: 50.55, date: Date.new(2020, 3, 4), transaction_type: 0)
-account2.transactions.create(payee: 'ZARA', amount: 120.00, date: Date.new(2020, 4, 1), transaction_type: 0)
-account2.transactions.create(payee: 'H&M', amount: 20.0, date: Date.new(2020, 6, 2), transaction_type: 0)
-account2.transactions.create(payee: 'UNIQLO', amount: 27.5, date: Date.new(2020, 9, 3), transaction_type: 0)
+account.transactions.create(payee: 'Starbucks', amount: -2.75, date: Date.new(2020, 12, 1), transaction_type: 0, balance:0)
+account.transactions.create(payee: 'McDonalds', amount: -9.25, date: Date.new(2020, 12, 1), transaction_type: 0,balance:0)
+account.transactions.create(payee: 'Wasabi', amount: -5.75, date: Date.new(2020, 12, 2), transaction_type: 0,balance:0)
+account.transactions.create(payee: 'Shell', amount: -27.5, date: Date.new(2020, 12, 3), transaction_type: 0,balance:0)
+
+account2 = user.accounts.create(currency: 1, account_type: "Savings", account_number: "5678", iban: "67-54-21",balance:20)
+
+account.transactions.create(payee: 'TestF Saving Account', amount: 0.75, date: Date.new(2020, 10, 31), transaction_type: 1, balance:0)
+account.transactions.create(payee: 'TestF Saving Account', amount: 100.25, date: Date.new(2020, 01, 11), transaction_type: 1, balance:0)
+account.transactions.create(payee: 'TestF Saving Account', amount: 89.75, date: Date.new(2020, 12, 28), transaction_type: 1,balance:0)
+account.transactions.create(payee: 'TestF Saving Account', amount: 10.5, date: Date.new(2020, 12, 2), transaction_type:1, balance:0)
+
+account2.transactions.create(payee: 'TestF Current Account', amount: -0.75, date: Date.new(2020, 10, 31), transaction_type: 1,balance:0)
+account2.transactions.create(payee: 'TestF Current Account', amount: -100.25, date: Date.new(2020, 01, 11), transaction_type: 1,balance:0)
+account2.transactions.create(payee: 'TestF Current Account', amount: -89.75, date: Date.new(2020, 12, 28), transaction_type: 1,balance:0)
+account2.transactions.create(payee: 'TestF Current Account', amount: -10.5, date: Date.new(2020, 12, 2), transaction_type:1,balance:0)

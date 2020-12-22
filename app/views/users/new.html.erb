@@ -1,6 +1,6 @@
 <%= link_to("<< Back to List", users_path, :class => 'back-link') %>
 
-<div class="users-new container">
+<div class="users-new">
   <h2>Create User</h2>
 
   <%= form_for(@user, :url => users_path, :method => 'post') do |f| %>

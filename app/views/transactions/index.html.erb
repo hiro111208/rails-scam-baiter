@@ -1,74 +1,35 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Bee Bank</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" <%= link_to "Home","welcome#index" %></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" <%= link_to "Log In","bank_login/index" %></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" <%= link_to "Contact Us","" %></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" <%= link_to "Find your nearest branch","" %></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" <%= link_to_if(current_user.admin?, "Admin Page", users_path, :class => 'action index'){} %></a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+<p id="notice"><%= notice %></p>
+
+<h1>Transactions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Account</th>
+      <th>Payee</th>
+      <th>Amount</th>
+      <th>Transaction type</th>
+      <th>Balance</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @transactions.each do |transaction| %>
+      <tr>
+        <td><%= transaction.account_id %></td>
+        <td><%= transaction.payee %></td>
+        <td><%= transaction.amount %></td>
+        <td><%= transaction.transaction_type %></td>
+        <td><%= transaction.balance %></td>
+        <td><%= link_to 'Show', transaction %></td>
+        <td><%= link_to 'Edit', edit_transaction_path(transaction) %></td>
+        <td><%= link_to 'Destroy', transaction, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
 <br>
 
-<div class="container">
-
-  <!-- The link to overview page is temporary. It should be in a navbar -->
-  <%= link_to("<< Back to Overview", root_path, :class => 'back-link') %>
-  <br>
-  <h3>Transaction Index</h3>
-  <br>
-  <%= link_to("Show", 'transactions/show', :class => 'back-link') %>
-  <%= button_to "Generate Random Data", {controller: 'transactions', action: 'create'}, {method: :post } %>
-
-  <h4>Balance:
-    <%= "#{Account.find(@current_account.id).balance} #{Account.find(@current_account.id).currency}" %></h4>
-  <br>
-  <label class="label" for="name">Number of Transactions:
-    <%= @transactions.size %>
-  </label>
-
-  <table class="table" summary="transaction-list">
-    <thead class="thead-dark">
-      <tr class="header">
-        <th>Date</th>
-        <th>Payee</th>
-        <th>Amount</th>
-        <th>Transaction Type</th>
-        <th>Account ID</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @transactions.each do |transaction| %>
-        <tr>
-          <td class="center"><%= transaction.date %></td>
-          <td class="center"><%= transaction.payee %></td>
-          <td class="center"><%= "#{transaction.amount} #{Account.find(transaction.account_id).currency}" %></td>
-          <td class="center"><%= transaction.transaction_type %></td>
-          <td class="center"><%= transaction.account_id %></td>
-          <td class="actions">
-            <%= link_to("Edit", edit_transaction_path(transaction), :class => 'action edit') %>
-            <%= link_to("Delete", delete_transaction_path(transaction), :class => 'action delete') %>
-          </td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-</div>
+<%= link_to 'New Transaction', new_transaction_path %>

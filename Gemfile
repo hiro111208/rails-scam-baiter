@@ -30,6 +30,8 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'bootstrap', '~> 5.0.0.alpha3'
 
+gem 'jquery-rails'
+
 gem 'devise'
 
 group :development, :test do
@@ -61,3 +63,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'pry-rails'
 
 gem 'rails-controller-testing'
+
+gem 'simple_captcha2', require: 'simple_captcha'

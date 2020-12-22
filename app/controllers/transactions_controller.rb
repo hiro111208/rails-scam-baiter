@@ -1,84 +1,78 @@
 class TransactionsController < ApplicationController
-  before_action :authenticate_user!
-  before_action :admin_user, only: %i[index create edit delete destroy]
+  before_action :set_transaction, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, :admin_user
 
+  # GET /transactions
+  # GET /transactions.json
   def index
-    @current_account = user_account
-    @transactions = Transaction.order('updated_at DESC').where(account_id: @current_account.id)
-  end
-
-  # non-admin users have only access to show page
-  def show
-    @current_account = user_account
-    @transactions = Transaction.order('date DESC').where(account_id: user_account.id)
-  end
-
-  # creates 10 random transactions
-  def create
-    @current_account = user_account
-    @payees = []
-    @amounts = []
     @transactions = Transaction.all
-    @transactions.each do |transaction|
-      @payees.push(transaction.payee)
-      @amounts.push(transaction.amount)
-    end
-    (1..10).each do |_num|
-      @transaction = @current_account.transactions.create(payee: @payees.sample, amount: rand(@amounts.min..@amounts.max).round(2), date: Date.today - (rand * 31), transaction_type: 0)
-    end
-    flash[:success] = 'Random transactions created'
-    redirect_to(transactions_path)
   end
 
+  # GET /transactions/1
+  # GET /transactions/1.json
+  def show
+  end
+
+  # GET /transactions/new
+  def new
+    @transaction = Transaction.new
+  end
+
+  # GET /transactions/1/edit
   def edit
-    @current_account = user_account
-    @transaction = Transaction.find(params[:id])
   end
 
-  def update
-    @current_account = user_account
-    @transaction = Transaction.find(params[:id])
-    if @transaction.update(transaction_params)
-      flash[:success] = 'Transaction updated'
-      redirect_to(transaction_path(@transaction))
-    else
-      render('edit')
+  # POST /transactions
+  # POST /transactions.json
+  def create
+    @transaction = Transaction.new(transaction_params)
+
+    respond_to do |format|
+      if @transaction.save
+        format.html { redirect_to @transaction, notice: 'Transaction was successfully created.' }
+        format.json { render :show, status: :created, location: @transaction }
+      else
+        format.html { render :new }
+        format.json { render json: @transaction.errors, status: :unprocessable_entity }
+      end
     end
   end
 
-  def delete
-    @transaction = Transaction.find(params[:id])
+  # PATCH/PUT /transactions/1
+  # PATCH/PUT /transactions/1.json
+  def update
+    respond_to do |format|
+      if @transaction.update(transaction_params)
+        format.html { redirect_to @transaction, notice: 'Transaction was successfully updated.' }
+        format.json { render :show, status: :ok, location: @transaction }
+      else
+        format.html { render :edit }
+        format.json { render json: @transaction.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
+  # DELETE /transactions/1
+  # DELETE /transactions/1.json
   def destroy
-    @transaction = Transaction.find(params[:id])
     @transaction.destroy
-    flash[:success] = 'Transaction deleted'
-    redirect_to(transactions_path)
+    respond_to do |format|
+      format.html { redirect_to transactions_url, notice: 'Transaction was successfully destroyed.' }
+      format.json { head :no_content }
+    end
   end
 
   private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_transaction
+      @transaction = Transaction.find(params[:id])
+    end
 
-  def transaction_params
-    params.require(:transaction).permit(
-      :payee,
-      :amount,
-      :date,
-      :transaction_type
-    )
-  end
-
-  def admin_user
-    redirect_to(root_url) unless current_user.admin?
-  end
-
-  # def set_current_user
-  #  @current_user = User.find_by(id: session[:user_id])
-  # end
-
-  def user_account
-    # current_user.accounts.find_by(id: session[:account_id])
-    # current_user.accounts.find_by(params[:id])
-    current_user.accounts.first
-  end
+    # Only allow a list of trusted parameters through.
+    def transaction_params
+      params.require(:transaction).permit(:account_id, :payee, :amount, :transaction_type, :balance)
+    end
+    def admin_user
+      redirect_to(root_url) unless current_user.admin?
+    end
 end

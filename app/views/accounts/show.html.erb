@@ -1,70 +1,63 @@
 <%= navigation_bar %>
 
-<%= link_to("<< Back to Users", users_path, :class => 'back-link') %>
+<p id="notice"><%= notice %></p>
+
+<%= link_to '<< Back to Accounts', accounts_path %>
 
 <div class="row justify-content-center">
   <div class="col-md-6">
 
     <div class="row border-bottom">
       <div class="col-6 py-2">
-        First name:
+        User:
       </div>
       <div class="col-6 border-left alert-info py-2">
-        <%= @user.firstName %>
+        <%= User.find(@account.user_id).email %>
       </div>
     </div>
 
     <div class="row border-bottom">
       <div class="col-6 py-2">
-        Last name:
+        Currency:
       </div>
       <div class="col-6 border-left alert-info py-2">
-        <%= @user.lastName %>
+        <%= @account.currency %>
       </div>
     </div>
 
     <div class="row border-bottom">
       <div class="col-6 py-2">
-        Email:
+        Balance:
       </div>
       <div class="col-6 border-left alert-info py-2">
-        <%= @user.email %>
+        <%= @account.balance %>
       </div>
     </div>
 
     <div class="row border-bottom">
       <div class="col-6 py-2">
-        Password:
+        Account type:
       </div>
       <div class="col-6 border-left alert-info py-2">
-        <%= @user.password %>
+        <%= @account.account_type %>
       </div>
     </div>
 
     <div class="row border-bottom">
       <div class="col-6 py-2">
-        Admin:
+        Account number:
       </div>
       <div class="col-6 border-left alert-info py-2">
-        <%= @user.admin %>
+        <%= @account.account_number %>
       </div>
     </div>
 
     <div class="row border-bottom">
       <div class="col-6 py-2">
-        Created at:
+        IBAN:
       </div>
       <div class="col-6 border-left alert-info py-2">
-        <%= @user.created_at %>
-      </div>
-    </div>
-
-    <div class="row border-bottom">
-      <div class="col-6 py-2">
-        Updated at:
-      </div>
-      <div class="col-6 border-left alert-info py-2">
-        <%= @user.updated_at %>
+        <%= @account.iban %>
       </div>
     </div>
 
