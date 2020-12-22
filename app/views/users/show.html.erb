@@ -1,64 +1,72 @@
-<%= link_to("<< Back to List", users_path, :class => 'back-link') %>
+<%= navigation_bar %>
 
-<div class="table">
-  <div class="tab-content profile-tab" id="myTabContent">
-    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-      <div class="row">
-        <div class="col-md-6 border-bottom">
-          <label>First Name</label>
-        </div>
-        <div class="col-md-6 border-bottom border-left alert-info text-dark">
-          <p><%= @user.firstName %></p>
-        </div>
+<%= link_to("<< Back to Users", users_path, :class => 'back-link') %>
+
+<div class="row justify-content-center">
+  <div class="col-md-6">
+
+    <div class="row border-bottom">
+      <div class="col-6 py-2">
+        First name:
       </div>
-      <div class="row">
-        <div class="col-md-6 border-bottom">
-          <label>Last Name</label>
-        </div>
-        <div class="col-md-6 border-bottom border-left alert-info text-dark">
-          <p><%= @user.lastName %></p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-6 border-bottom">
-          <label>Email</label>
-        </div>
-        <div class="col-md-6 border-bottom border-left alert-info text-dark">
-          <p><%= @user.email %></p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-6 border-bottom">
-          <label>Password</label>
-        </div>
-        <div class="col-md-6 border-bottom border-left alert-info text-dark">
-          <p><%= @user.password %></p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-6 border-bottom">
-          <label>Admin</label>
-        </div>
-        <div class="col-md-6 border-bottom border-left alert-info text-dark">
-          <p><%= @user.admin %></p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-6 border-bottom">
-          <label>Created</label>
-        </div>
-        <div class="col-md-6 border-bottom border-left alert-info text-dark">
-          <p><%= @user.created_at %></p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-6 border-bottom">
-          <label>Updated</label>
-        </div>
-        <div class="col-md-6 border-bottom border-left alert-info text-dark">
-          <p><%= @user.updated_at %></p>
-        </div>
+      <div class="col-6 border-left alert-info py-2">
+        <%= @user.firstName %>
       </div>
     </div>
+
+    <div class="row border-bottom">
+      <div class="col-6 py-2">
+        Last name:
+      </div>
+      <div class="col-6 border-left alert-info py-2">
+        <%= @user.lastName %>
+      </div>
+    </div>
+
+    <div class="row border-bottom">
+      <div class="col-6 py-2">
+        Email:
+      </div>
+      <div class="col-6 border-left alert-info py-2">
+        <%= @user.email %>
+      </div>
+    </div>
+
+    <div class="row border-bottom">
+      <div class="col-6 py-2">
+        Password:
+      </div>
+      <div class="col-6 border-left alert-info py-2">
+        <%= @user.password %>
+      </div>
+    </div>
+
+    <div class="row border-bottom">
+      <div class="col-6 py-2">
+        Admin:
+      </div>
+      <div class="col-6 border-left alert-info py-2">
+        <%= @user.admin %>
+      </div>
+    </div>
+
+    <div class="row border-bottom">
+      <div class="col-6 py-2">
+        Created at:
+      </div>
+      <div class="col-6 border-left alert-info py-2">
+        <%= @user.created_at %>
+      </div>
+    </div>
+
+    <div class="row border-bottom">
+      <div class="col-6 py-2">
+        Updated at:
+      </div>
+      <div class="col-6 border-left alert-info py-2">
+        <%= @user.updated_at %>
+      </div>
+    </div>
+
   </div>
 </div>

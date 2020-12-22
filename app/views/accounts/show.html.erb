@@ -1,34 +1,65 @@
+<%= navigation_bar %>
+
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>User:</strong>
-  <%= @account.user_id %>
-</p>
+<%= link_to '<< Back to Accounts', accounts_path %>
 
-<p>
-  <strong>Currency:</strong>
-  <%= @account.currency %>
-</p>
+<div class="row justify-content-center">
+  <div class="col-md-6">
 
-<p>
-  <strong>Balance:</strong>
-  <%= @account.balance %>
-</p>
+    <div class="row border-bottom">
+      <div class="col-6 py-2">
+        User:
+      </div>
+      <div class="col-6 border-left alert-info py-2">
+        <%= User.find(@account.user_id).email %>
+      </div>
+    </div>
 
-<p>
-  <strong>Account type:</strong>
-  <%= @account.account_type %>
-</p>
+    <div class="row border-bottom">
+      <div class="col-6 py-2">
+        Currency:
+      </div>
+      <div class="col-6 border-left alert-info py-2">
+        <%= @account.currency %>
+      </div>
+    </div>
 
-<p>
-  <strong>Account number:</strong>
-  <%= @account.account_number %>
-</p>
+    <div class="row border-bottom">
+      <div class="col-6 py-2">
+        Balance:
+      </div>
+      <div class="col-6 border-left alert-info py-2">
+        <%= @account.balance %>
+      </div>
+    </div>
 
-<p>
-  <strong>Iban:</strong>
-  <%= @account.iban %>
-</p>
+    <div class="row border-bottom">
+      <div class="col-6 py-2">
+        Account type:
+      </div>
+      <div class="col-6 border-left alert-info py-2">
+        <%= @account.account_type %>
+      </div>
+    </div>
 
-<%= link_to 'Edit', edit_account_path(@account) %> |
-<%= link_to 'Back', accounts_path %>
+    <div class="row border-bottom">
+      <div class="col-6 py-2">
+        Account number:
+      </div>
+      <div class="col-6 border-left alert-info py-2">
+        <%= @account.account_number %>
+      </div>
+    </div>
+
+    <div class="row border-bottom">
+      <div class="col-6 py-2">
+        IBAN:
+      </div>
+      <div class="col-6 border-left alert-info py-2">
+        <%= @account.iban %>
+      </div>
+    </div>
+
+  </div>
+</div>
