@@ -9,7 +9,7 @@ Formed of:
 * Skye Macdonald (k19015078)
 
 ## Deployed Version
-This app is deployed on Heroku at https://safe-headland-25619.herokuapp.com/
+This app is deployed on Heroku at https://pure-journey-23122.herokuapp.com/
 
 ### Admin Account
 Username: `admin@example.com`
